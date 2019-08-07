@@ -165,7 +165,7 @@
 
 function makeSlider(a) {
   var c = {
-    url: "http://www.dte.web.id",
+    url: "https://wallpapershdv.blogspot.com",
     numPost: 5,
     newTabLink: false,
     labelName: null,
@@ -212,7 +212,7 @@ function makeSlider(a) {
           p = (r[m].link[l].rel == "alternate") ? r[m].link[l].href : "#"
         }
         h += '<div class="slider-item">';
-        h += (c.showThumb && c.showDetail) ? '<div class="image-wrapper">' + e + "</div>" : (c.showThumb && !c.showDetail) ? '<div class="image-wrapper"><a href="' + p + '" title="' + q + '"' + (c.newTabLink ? ' target="_blank"' : "") + ">" + e + "</a></div>" : "";
+        h += (c.showThumb && c.showDetail) ? '<div class="image-wrapper"><a href="' + p + '" title="' + q + '"' + (c.newTabLink ? ' target="_blank"' : "") + ">" + e + "</a></div>" : (c.showThumb && !c.showDetail) ? '<div class="image-wrapper"><a href="' + p + '" title="' + q + '"' + (c.newTabLink ? ' target="_blank"' : "") + ">" + e + "</a></div>" : "";
         h += (c.showDetail) ? '<div class="detail-wrapper"><h4><a title="' + q + '" href="' + p + '"' + (c.newTabLink ? ' target="_blank"' : "") + ">" + ((c.titleLength == "auto") ? q : q.substring(0, c.titleLength) + (q.length > c.titleLength ? "&hellip;" : "")) + "</a></h4><p>" + o + "</p></div>" : "";
         h += "</div>";
         $("#" + c.containerId).css({

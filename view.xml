@@ -2139,7 +2139,7 @@ function artikelterkait() {
 &lt;/style&gt;
 &lt;div id=&quot;slider-rotator&quot; class=&quot;slider-rotator loading&quot;&gt;
 &lt;/div&gt;
-&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdn.jsdelivr.net/gh/Arlina-Design/quasar@413112eb5595cb5f149455b37638cd872085cefa/feedrotator.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdn.jsdelivr.net/npm/hdv-anivn/feedrotator.min.js&quot;&gt;&lt;/script&gt;
 &lt;script type=&quot;text/javascript&quot;&gt;
 makeSlider({
     url: &quot;https://wallpapershdv.blogspot.com&quot; // Change to your blog URL
