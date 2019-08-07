@@ -1,0 +1,17 @@
+FEATURE :
+
+Responsive
+SEO
+1 Column (Homepage and Static Page)
+2 Column (Post Page)
+Masonry Grid Base Homepage Post
+Mixed Light Color Scheme
+Share Button (Homepage and Post Page)
+Fixed Top Menu
+Main Side Menu
+Search Button
+Less Encrypted CSS and Script (Feel free to explore your creativity)
+Social Bookmark (Header Section)
+Floating Bounce to Top Button
+Sitemap Widget (Static Page)
+Contact Form Widget (Static Page)
