@@ -653,7 +653,6 @@ h2.post-title a:hover{color:#f8716d;}
 .post:hover img {-ms-transform: scale(1.2) rotate(2deg);-webkit-transform: scale(1.2) rotate(2deg);transform: scale(1.2) rotate(2deg);-o-transition: all 0.6s ease-in-out;-moz-transition: all 0.6s ease-in-out;-webkit-transition: all 0.6s ease-in-out;}
 .img-thumbnail {overflow:hidden;background:#f0f0f0;position:relative;float:left;width:100%;height:auto;margin:0 auto;padding:0;}
 .img-thumbnail img {width:100%;height:auto;margin:0 auto;}
-div.item-label &gt; span:nth-child(n+2){display:none;}
 .item-label {z-index:6;font-family:&#39;Lobster&#39;;font-size:15px;
 background:#fff;text-align:center;padding:1px 4px;}
 .item-label-more {z-index:6;font-family:&#39;Lobster&#39;;font-size:15px;
@@ -667,9 +666,12 @@ padding:2px 5px;color:#fff;opacity:0.8;transition:all .3s ease-in-out;}
 div.item-label &gt; span {z-index:6;padding:5px 3px;background:#fff;position:relative;top:-5px;}
 div.item-label-more &gt; span {z-index:6;padding:5px 3px;background:#fff;position:relative;top:-5px;}
 
-span[hdv-label*='2560'], span[hdv-label*='1920'], span[hdv-label*='Everyone'], span[hdv-label*='3840'], span[hdv-label*='CGI'], span[hdv-label*='FAQ'] {
+<!-- span[hdv-label*='Web'], span[hdv-label*='Video'], span[hdv-label*='2560'], span[hdv-label*='1920'], span[hdv-label*='Everyone'], span[hdv-label*='3840'], span[hdv-label*='CGI'], span[hdv-label*='FAQ'] {
   display:none;
 }
+span[hdv-label-show*='Landscape'], span[hdv-label-show*='Animal'], span[hdv-label-show*='Unspecified'], span[hdv-label-show*='Sci-fi'], span[hdv-label-show*='Audio'], span[hdv-label-show*='Abstract'], span[hdv-label-show*='Game'], span[hdv-label-show*='Anime'], span[hdv-label-show*='2560'], span[hdv-label-show*='1920'], span[hdv-label-show*='Everyone'], span[hdv-label-show*='3840'], span[hdv-label-show*='CGI'], span[hdv-label-show*='FAQ'] {
+  display:none;
+} -->
 
 span.overlay {background:rgba(0,0,0,0.05);cursor:pointer;position:absolute;right:0;left:0;
 bottom:0;top:0;z-index:2;opacity:1;width:100%;height:100%;transition:all .3s linear;}
@@ -1703,7 +1705,7 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
 <div class='item-label'>
 <b:if cond='data:post.labels'>
 <b:loop values='data:post.labels' var='label'>
-  <span><a expr:href='data:label.url + &quot;?max-results=20&quot;' rel='tag'><data:label.name/></a></span><b:if cond='data:label.isLast != &quot;true&quot;'/>
+  <span expr:hdv-label-show='data:label.name' ><a expr:href='data:label.url + &quot;?max-results=20&quot;' rel='tag'><data:label.name/></a></span><b:if cond='data:label.isLast != &quot;true&quot;'/>
 </b:loop>
 </b:if>
 </div>
