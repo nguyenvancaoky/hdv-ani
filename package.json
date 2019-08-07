@@ -1,11 +1,19 @@
 {
   "name": "hdv-anivn",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "anivn",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nguyenvancaoky/hdv-anivn.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nguyenvancaoky/hdv-anivn/issues"
+  },
+  "homepage": "https://github.com/nguyenvancaoky/hdv-anivn#readme",
+  "description": ""
 }
