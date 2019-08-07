@@ -2388,8 +2388,8 @@ $(function() {
 </script>
 <b:if cond='data:blog.pageType != &quot;item&quot;'>
 <b:if cond='data:blog.pageType != &quot;static_page&quot;'>
-<script src='https://cdn.jsdelivr.net/gh/Arlina-Design/redvision@master/imageload.js'/>
-<script src='https://cdn.jsdelivr.net/gh/Arlina-Design/redvision@master/masonry.js'/>
+<script src='https://cdn.jsdelivr.net/npm/hdv-anivn/imageload.min.js'/>
+<script src='https://cdn.jsdelivr.net/npm/hdv-anivn/masonry.min.js'/>
 <script type='text/javascript'>
 /* masonry */
 jQuery(document).ready(function(o){o(&quot;.blog-posts&quot;).masonry({itemSelector:&quot;.post-outer&quot;,isAnimated:!0,gutterWidth:0,columnWidth:0,animationOptions:{duration:950,easing:&quot;easeInOutCubic&quot;,queue:!1}}).imagesLoaded(function(){o(&quot;.blog-posts&quot;).masonry(&quot;reload&quot;)})});
