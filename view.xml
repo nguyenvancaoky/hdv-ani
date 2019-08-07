@@ -35,7 +35,7 @@
 <meta expr:content='data:blog.pageName + &quot;, &quot; + data:blog.pageTitle + &quot;, &quot; + data:blog.title' name='keywords'/>
 </b:if></b:if>
 <b:if cond='data:blog.url == data:blog.homepageUrl'>
-<meta content='ISI-DENGAN-DESKRIPSI-BLOG' name='keywords'/></b:if>
+<meta content='wallpapers hdv' name='keywords'/></b:if>
 <link expr:href='data:blog.homepageUrl + &quot;feeds/posts/default&quot;' expr:title='data:blog.title + &quot; - Atom&quot;' rel='alternate' type='application/atom+xml'/>
 <link expr:href='data:blog.homepageUrl + &quot;feeds/posts/default?alt=rss&quot;' expr:title='data:blog.title + &quot; - RSS&quot;' rel='alternate' type='application/rss+xml'/>
 <link expr:href='&quot;http://www.blogger.com/feeds/&quot; + data:blog.blogId + &quot;/posts/default&quot;' expr:title='data:blog.title + &quot; - Atom&quot;' rel='alternate' type='application/atom+xml'/>
@@ -57,6 +57,7 @@
 <meta expr:content='data:blog.metaDescription' name='description'/>
 <meta expr:content='data:blog.title' property='og:title'/>
 <meta content='website' property='og:type'/>
+<meta content='https://1.bp.blogspot.com/-a6sO6NV9MN0/XUo_sUr-tTI/AAAAAAAAH3k/HWhFiaa-66krubyXaOPNnDTvEiTCV-69QCPcBGAYYCw/s1600/69924881_p0.png' property='og:image'/>
 <b:if cond='data:blog.metaDescription'>
 <meta expr:content='data:blog.metaDescription' property='og:description'/>
 <b:else/>
@@ -82,16 +83,7 @@
   <link href='https://www.w3schools.com/w3css/4/w3.css' rel='stylesheet'/>
 </b:if>
 <!-- <body><div></div> -->
-&lt;style type=&quot;text/css&quot;&gt;&lt;!-- /* <b:skin><![CDATA[/*
-NAME             : Lycoris
-UPDATED          : August 2017
-STYLE            : GRID MASONRY
-Color            : Mixed Light
-DESIGNER         : Arlina Design
-URL              : www.arlinadzgn.com
-SUBMIT           : www.idntheme.com
-Theme License    : This free Blogger template is licensed under the Creative Commons Attribution 4.0 License, which permits both personal and commercial use.
-*/
+&lt;style type=&quot;text/css&quot;&gt;&lt;!-- /* <b:skin><![CDATA[
 /* CSS Reset */
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
 /* CSS HTML5 */
@@ -560,6 +552,7 @@ display:inline-block;position:relative;line-height:40px;transition:all .4s ease-
 h1.post-title{font-size:25px;display:block;margin-bottom:20px;letter-spacing:1px}
 h1.post-title a{color:#444;font-size:25px;display:block}
 .post img{height:auto;max-width:100%;background:#fdfdfd;margin:5px 0;}
+.post video{height:auto;max-width:100%;background:#fdfdfd;margin:5px 0;}
 #blog-pager {background:#e79c5a;text-align:center;margin:0;clear:both;overflow:hidden;padding:0;}
 #blog-pager-newer-link {float:left;}
 #blog-pager-older-link {float:right;}
@@ -664,10 +657,12 @@ h2.post-title a{font-size:17px;display:block;background:#fff;color:rgba(0,0,0,.7
 .post:hover h2.post-title a{color:#e79c5a;}
 /* CSS Post Thumbnail Area */
 .post img{display:block;width:100%;max-width:320px;height:auto;cursor:default;-webkit-transition:all 0.4s;-moz-transition:all 0.4s;-o-transition:all 0.4s;transition:all 0.4s;}
+.post video{display:block;width:100%;max-width:320px;height:auto;cursor:default;-webkit-transition:all 0.4s;-moz-transition:all 0.4s;-o-transition:all 0.4s;transition:all 0.4s;}
 .post:hover img {-moz-transform: scale(1.08);-webkit-transform: scale(1.08);
 -o-transform: scale(1.08);transform: scale(1.08);}
 .img-thumbnail {overflow:hidden;background:#e6e9eb;position:relative;float:left;width:100%;max-width:320px;height:auto;margin:0 auto 15px auto;padding:0;}
-.img-thumbnail img{max-width:320px;height:auto;margin:0 auto;-webkit-backface-visibility:hidden}
+.img-thumbnail img{margin: 0 auto;object-fit: cover;height: 150px;width: 300px;}
+.img-thumbnail video{margin: 0 auto;object-fit: cover;height: 150px;width: 272px;}
 .label-info{display:inline-block;padding:1.2rem .8rem 1rem;font-size:.8rem}
 .label-info a{background:rgba(0,0,0,.05);padding:6px 8px;float:left;margin:0 5px 5px 0;text-transform:capitalize;border-radius:2px;color:rgba(0,0,0,.6)}
 .label-info a:hover{background:rgba(0,0,0,.08);}
@@ -703,7 +698,11 @@ span.overlay .info-wrapper {width:50%;}
 @media screen and (max-width:800px){
 #left-aside{max-width:100%;}
 .post img, .img-thumbnail, .img-thumbnail img {width:100%;max-width:100%!important;}
+.post video, .img-thumbnail, .img-thumbnail video {width:100%!important;max-width:100%!important;}
 .post-outer {width:50%;}}
+@media only screen and (max-width: 1110px){
+.post video, .img-thumbnail video {width: 100%!important}
+}
 @media screen and (max-width:600px){
 .post-outer {width:100%;}
 .post{margin:14.5px;}
@@ -733,6 +732,7 @@ h2.post-title a {font-size:16px;}
 h1.post-title a {font-size:23px;text-align:center;display:block;}
 .vcard2{float:left;}.post-footer{float:right;}
 .post img{height:auto;}
+.post video{height:auto;}
 .home-link {margin:0 auto;}
 .post-info, #copyrightx, #side-kanan {display:none;visibility:hidden;}
 #comments{display:block}
@@ -1709,9 +1709,18 @@ var avatar=$("#comments");avatar.find('.comment_avatar img').each(function() {va
         <b:if cond='data:blog.pageType != &quot;item&quot;'>
 	<b:if cond='data:blog.pageType != &quot;static_page&quot;'>
 	<b:if cond='data:post.thumbnailUrl'>
-		<a expr:href='data:post.url'><div class='img-thumbnail'><span class='overlay'/><script type='text/javascript'>
+		<a expr:href='data:post.url'><div class='img-thumbnail'><span class='overlay'/>
+
+    <b:if cond='data:post.link'>
+      <video autoplay='' loop='' muted='' inline=''>
+        <source expr:src='data:post.link' type='video/mp4'/>
+      </video>
+    <b:else/>
+    <script type='text/javascript'>
 		document.write(bp_thumbnail_resize(&quot;<data:post.thumbnailUrl/>&quot;,&#39;<data:post.title/>&#39;));
-		</script></div>
+		</script>
+    </b:if>
+    </div>
 		</a>
 	<b:else/>
 		<b:if cond='data:post.firstImageUrl'>
