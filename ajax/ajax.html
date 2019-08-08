@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+
+	
+$.ajax({
+  url: 'http://steamworkshop.download/online/steamonline.php',
+  dataType: 'jsonp',
+  jsonpCallback: 'handleResponse' // chỉ định tên của callback function
+});
+
+function handleResponse(response) {
+  $('#results').html(response);
+}
+
+
+});
+</script>
+</head>
+<body>
+
+<div id="results"></div>
+
+</body>
+</html>
