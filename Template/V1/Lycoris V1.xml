@@ -666,12 +666,8 @@ padding:2px 5px;color:#fff;opacity:0.8;transition:all .3s ease-in-out;}
 div.item-label &gt; span {z-index:6;padding:5px 3px;background:#fff;position:relative;top:-5px;}
 div.item-label-more &gt; span {z-index:6;padding:5px 3px;background:#fff;position:relative;top:-5px;}
 
-<!-- span[hdv-label*='Web'], span[hdv-label*='Video'], span[hdv-label*='2560'], span[hdv-label*='1920'], span[hdv-label*='Everyone'], span[hdv-label*='3840'], span[hdv-label*='CGI'], span[hdv-label*='FAQ'] {
-  display:none;
-}
-span[hdv-label-show*='Landscape'], span[hdv-label-show*='Animal'], span[hdv-label-show*='Unspecified'], span[hdv-label-show*='Sci-fi'], span[hdv-label-show*='Audio'], span[hdv-label-show*='Abstract'], span[hdv-label-show*='Game'], span[hdv-label-show*='Anime'], span[hdv-label-show*='2560'], span[hdv-label-show*='1920'], span[hdv-label-show*='Everyone'], span[hdv-label-show*='3840'], span[hdv-label-show*='CGI'], span[hdv-label-show*='FAQ'] {
-  display:none;
-} -->
+div.item-label &gt; span:nth-child(n+2){display:none;}
+div.item-label-more &gt; span:nth-child(n+2){display:none;}
 
 span.overlay {background:rgba(0,0,0,0.05);cursor:pointer;position:absolute;right:0;left:0;
 bottom:0;top:0;z-index:2;opacity:1;width:100%;height:100%;transition:all .3s linear;}
