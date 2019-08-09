@@ -25,7 +25,7 @@
     <b:include data='blog' name='all-head-content'/>
 
     <link crossorigin='anonymous' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css' integrity='sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb' rel='stylesheet'/>
-
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <b:skin><![CDATA[
 /*
 -----------------------------------------------
@@ -1279,13 +1279,13 @@ loadCSS("//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css");
 <b:section class='naver-morpho' id='naver-morpho' maxwidgets='1' name='Navigation' preferred='no' showaddelement='no'>
   <b:widget id='HTML996' locked='true' title='Posts Per Page' type='HTML' version='1'>
     <b:widget-settings>
-      <b:widget-setting name='content'>6</b:widget-setting>
+      <b:widget-setting name='content'>20</b:widget-setting>
     </b:widget-settings>
     <b:includable id='main'>
           <b:if cond='data:content == &quot;&quot;'>
             <script type='text/javascript'>
               //<![CDATA[
-              var perPage = 6;
+              var perPage = 20;
               //]]>
             </script>
             <b:else/>
@@ -1503,7 +1503,7 @@ loadCSS("//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css");
 <b:section class='headerright' id='headerright' maxwidgets='1' name='Header Ads' preferred='no' showaddelement='no'>
    <b:widget id='HTML995' locked='true' title='' type='HTML' version='1'>
      <b:widget-settings>
-       <b:widget-setting name='content'><![CDATA[<img src="https://2.bp.blogspot.com/-KB7QlE2yaQE/Wtjj4r0XnuI/AAAAAAAABOg/Iuqj_iOHlwEOMuLJx0H2usk6oQLIHoQqQCLcBGAs/s1600/BANNER.png" />]]></b:widget-setting>
+       <b:widget-setting name='content'><![CDATA[<!-- Header Ads --> <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7811836118065853" data-ad-slot="7245957717" data-ad-format="auto" data-full-width-responsive="true"></ins> <script> (adsbygoogle = window.adsbygoogle || []).push({}); </script> ]]></b:widget-setting>
      </b:widget-settings>
      <b:includable id='main'>
   <!-- only display title if it's non-empty -->
@@ -1574,7 +1574,7 @@ loadCSS("//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css");
 <b:section class='morpho_featured_widget morpho-initiate' id='featured' maxwidget='1' name='Featured Grid Widget' preferred='no' showaddelement='no'>
   <b:widget id='HTML998' locked='true' title='Featured Grid Widget' type='HTML' version='1'>
     <b:widget-settings>
-      <b:widget-setting name='content'><![CDATA[<span data-type="morphofeatured" data-label="travel"></span>]]></b:widget-setting>
+      <b:widget-setting name='content'><![CDATA[<span data-type="morphofeatured" data-label="Anime"></span>]]></b:widget-setting>
     </b:widget-settings>
     <b:includable id='main'>
 
@@ -1600,7 +1600,7 @@ loadCSS("//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css");
 <b:section class='ad-home-widget' id='morpho-advert-1' maxwidgets='1' name='Home Advertisement [Full Width]' preferred='no' showaddelement='no'>
   <b:widget id='HTML994' locked='false' title='Full width home advertisement' type='HTML' version='1'>
     <b:widget-settings>
-      <b:widget-setting name='content'><![CDATA[<a href="http://www.blossomtheme.com" target="_blank"><img style="width:100%;" src="https://2.bp.blogspot.com/-KB7QlE2yaQE/Wtjj4r0XnuI/AAAAAAAABOg/Iuqj_iOHlwEOMuLJx0H2usk6oQLIHoQqQCLcBGAs/s1600/BANNER.png"/></a>]]></b:widget-setting>
+      <b:widget-setting name='content'><![CDATA[]]></b:widget-setting>
     </b:widget-settings>
     <b:includable id='main'>
   <!-- only display title if it's non-empty -->
@@ -1660,25 +1660,9 @@ loadCSS("//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css");
     <div id='main-wrapper'>
       <div class='custwid' id='customwid'>
 		<b:section class='customwidgets' id='customwidget' name='Customized Widgets' preferred='no' showaddelement='yes'>
-<b:widget id='HTML993' locked='false' title='Travel the world' type='HTML'>
+<b:widget id='HTML993' locked='false' title='GIRLS' type='HTML'>
   <b:widget-settings>
-    <b:widget-setting name='content'><![CDATA[<object class='morpho-widget' data-label='travel' data-type='list'></object>]]></b:widget-setting>
-  </b:widget-settings>
-  <b:includable id='main'>
-  <!-- only display title if it's non-empty -->
-  <b:if cond='data:title != &quot;&quot;'>
-    <h2 class='title'><data:title/></h2>
-  </b:if>
-  <div class='widget-content'>
-    <data:content/>
-  </div>
-
-  <b:include name='quickedit'/>
-</b:includable>
-</b:widget>
-<b:widget id='HTML992' locked='false' title='Climb the mountains' type='HTML'>
-  <b:widget-settings>
-    <b:widget-setting name='content'><![CDATA[<object class='morpho-widget' data-label='mountain' data-type='gallery'></object>]]></b:widget-setting>
+    <b:widget-setting name='content'><![CDATA[<object class='morpho-widget' data-label='Girls' data-type='gallery'></object>]]></b:widget-setting>
   </b:widget-settings>
   <b:includable id='main'>
   <!-- only display title if it's non-empty -->
@@ -1699,7 +1683,7 @@ loadCSS("//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css");
 <b:section class='ad-top-widget' id='morpho-advert-2' maxwidgets='1' name='Post Page Advertisement [Top]' preferred='no' showaddelement='no'>
   <b:widget id='HTML991' locked='true' title='Post Page Advertisement [Top]' type='HTML' version='1'>
     <b:widget-settings>
-      <b:widget-setting name='content'><![CDATA[<a href="http://www.blossomtheme.com" target="_blank"><img style="width:100%;" src="https://2.bp.blogspot.com/-KB7QlE2yaQE/Wtjj4r0XnuI/AAAAAAAABOg/Iuqj_iOHlwEOMuLJx0H2usk6oQLIHoQqQCLcBGAs/s1600/BANNER.png"/></a>]]></b:widget-setting>
+      <b:widget-setting name='content'><![CDATA[]]></b:widget-setting>
     </b:widget-settings>
     <b:includable id='main'>
   <!-- only display title if it's non-empty -->
@@ -2397,11 +2381,6 @@ loadCSS("//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css");
 
 </a></span><span class='entry-cats'><b:if cond='data:top.showPostLabels and data:post.labels'><span>&#160; in </span><b:loop values='data:post.labels' var='label'><a class='morpho-max-limit' expr:href='data:label.url' expr:title='&quot;View all posts in &quot; + data:label.name'><data:label.name/></a> <b:if cond='not data:label.isLast'>, </b:if></b:loop></b:if></span><span class='tw-button comment-count'><a expr:href='data:post.url + &quot;#comments&quot;' expr:title='data:post.numComments + &quot; comments&quot;'><data:post.numComments/> comments</a></span></div>
 
-<b:if cond='data:post.firstImageUrl'>
-<div class='entry-media single-media-thumb'><div class='tw-thumbnail'><div class='image-overlay'><a class='overlay-icon' expr:href='data:post.url' expr:title='data:post.title'><img expr:alt='data:post.title' expr:src='data:post.firstImageUrl'/></a></div></div></div>
-
-              </b:if>
-
               <div class='entry-content-container'>
 				<div class='entry-share vertical' data-id='95' expr:data-ajaxurl='data:blog.homepageUrl'>
 					<a class='facebook' expr:href='data:post.url' title='Share this'><i class='ion-social-facebook'/></a>
@@ -2906,7 +2885,7 @@ $('.morpho-navigation').after(codei);
 <b:section class='ad-bottom-widget' id='morpho-advert-3' maxwidgets='1' name='Bottom Ad [Post Page]' preferred='no' showaddelement='no'>
   <b:widget id='HTML988' locked='true' title='Bottom Ad [Post Page]' type='HTML' version='1'>
     <b:widget-settings>
-      <b:widget-setting name='content'><![CDATA[<a href="http://www.blossomtheme.com" target="_blank"><img style="width:100%;" src="https://2.bp.blogspot.com/-KB7QlE2yaQE/Wtjj4r0XnuI/AAAAAAAABOg/Iuqj_iOHlwEOMuLJx0H2usk6oQLIHoQqQCLcBGAs/s1600/BANNER.png"/></a>]]></b:widget-setting>
+      <b:widget-setting name='content'><![CDATA[]]></b:widget-setting>
     </b:widget-settings>
     <b:includable id='main'>
   <!-- only display title if it's non-empty -->
@@ -2943,7 +2922,7 @@ $('.morpho-navigation').after(codei);
       </b:widget>
       <b:widget id='HTML2' locked='false' title='Advertisement' type='HTML' version='1'>
         <b:widget-settings>
-          <b:widget-setting name='content'><![CDATA[<a href="http://www.blossomtheme.com" target="_blank"><img style="width:100%;" src="https://4.bp.blogspot.com/-QD4BBaXgMlk/WtjlLaSndDI/AAAAAAAABO0/vZa6Wm-XCUk_eZv-ikRVZMQ_4zsZ-iI9QCLcBGAs/s1600/300.png"/></a>]]></b:widget-setting>
+          <b:widget-setting name='content'><![CDATA[<!-- DOC --> <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7811836118065853" data-ad-slot="1901544969" data-ad-format="auto" data-full-width-responsive="true"></ins> <script> (adsbygoogle = window.adsbygoogle || []).push({}); </script> ]]></b:widget-setting>
         </b:widget-settings>
         <b:includable id='main'>
   <!-- only display title if it's non-empty -->
@@ -3008,38 +2987,22 @@ head.appendChild(script);
   </div>
 </b:includable>
       </b:widget>
-      <b:widget cond='!data:view.isPost' id='PageList1' locked='false' title='' type='PageList'>
-        <b:widget-settings>
-          <b:widget-setting name='pageListJson'><![CDATA[{'home': {'href': 'https://edgy-blossom.blogspot.com/', 'title': 'Home', 'position': 0}}]]></b:widget-setting>
-          <b:widget-setting name='homeTitle'>Home</b:widget-setting>
-        </b:widget-settings>
-        <b:includable id='main'>
-  <b:if cond='data:title != &quot;&quot;'><h2><data:title/></h2></b:if>
-  <div class='widget-content'>
-    <b:if cond='data:mobile'>
-      <select expr:id='data:widget.instanceId + &quot;_select&quot;'>
-        <b:loop values='data:links' var='link'>
-          <option expr:value='data:link.href'>
-            <b:attr cond='data:link.isCurrentPage' name='selected' value='selected'/>
-            <data:link.title/>
-          </option>
-        </b:loop>
-      </select>
-      <span class='pagelist-arrow'>&amp;#9660;</span>
-    <b:else/>
-      <ul>
-        <b:loop values='data:links' var='link'>
-          <li>
-            <b:class cond='data:link.isCurrentPage' name='selected'/>
-            <a expr:href='data:link.href'><data:link.title/></a>
-          </li>
-        </b:loop>
-      </ul>
-    </b:if>
-    <b:include name='quickedit'/>
-  </div>
+      <b:widget id='HTML1' locked='false' title='Youtube' type='HTML'>
+    <b:widget-settings>
+      <b:widget-setting name='content'><![CDATA[<script src="https://apis.google.com/js/platform.js"></script> <div class="g-ytsubscribe" data-channelid="UCUHtRM9d9GB-gqpnJqzHzDQ" data-layout="full" data-count="default"></div>]]></b:widget-setting>
+    </b:widget-settings>
+    <b:includable id='main'>
+<!-- only display title if it's non-empty -->
+<b:if cond='data:title != &quot;&quot;'>
+<h2 class='title'><data:title/></h2>
+</b:if>
+<div class='widget-content'>
+<data:content/>
+</div>
+
+<b:include name='quickedit'/>
 </b:includable>
-      </b:widget>
+  </b:widget>
     </b:section>
 <div style='clear: both;'/>
 <div class='morpho-sidebar-tabs' id='morpho-sidebar-tabs'>
