@@ -9,11 +9,11 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nguyenvancaoky/hdv-anivn.git"
+    "url": "git+https://github.com/nguyenvancaokys/hdv-anivn.git"
   },
   "bugs": {
-    "url": "https://github.com/nguyenvancaoky/hdv-anivn/issues"
+    "url": "https://github.com/nguyenvancaokys/hdv-anivn/issues"
   },
-  "homepage": "https://github.com/nguyenvancaoky/hdv-anivn#readme",
+  "homepage": "https://github.com/nguyenvancaokys/hdv-anivn#readme",
   "description": ""
 }
