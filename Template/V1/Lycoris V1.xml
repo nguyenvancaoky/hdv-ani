@@ -653,22 +653,13 @@ h2.post-title a:hover{color:#f8716d;}
 .post:hover img {-ms-transform: scale(1.2) rotate(2deg);-webkit-transform: scale(1.2) rotate(2deg);transform: scale(1.2) rotate(2deg);-o-transition: all 0.6s ease-in-out;-moz-transition: all 0.6s ease-in-out;-webkit-transition: all 0.6s ease-in-out;}
 .img-thumbnail {overflow:hidden;background:#f0f0f0;position:relative;float:left;width:100%;height:auto;margin:0 auto;padding:0;}
 .img-thumbnail img {width:100%;height:auto;margin:0 auto;}
+div.item-label &gt; span:nth-child(n+2){display:none;}
 .item-label {z-index:6;font-family:&#39;Lobster&#39;;font-size:15px;
-background:#fff;text-align:center;padding:1px 4px;}
-.item-label-more {z-index:6;font-family:&#39;Lobster&#39;;font-size:15px;
 background:#fff;text-align:center;padding:1px 4px;}
 .item-label a {text-decoration:none;background:#ee2981;
 padding:2px 5px;color:#fff;opacity:0.8;transition:all .3s ease-in-out;}
-.item-label-more a {text-decoration:none;background:#717171;
-padding:2px 5px;color:#fff;opacity:0.8;transition:all .3s ease-in-out;}
 .item-label a:hover {opacity:1;background:#edc773;color:#fff;}
-.item-label-more a:hover {opacity:1;background:#edc773;color:#fff;}
 div.item-label &gt; span {z-index:6;padding:5px 3px;background:#fff;position:relative;top:-5px;}
-div.item-label-more &gt; span {z-index:6;padding:5px 3px;background:#fff;position:relative;top:-5px;}
-
-div.item-label &gt; span:nth-child(n+2){display:none;}
-div.item-label-more &gt; span:nth-child(n+2){display:none;}
-
 span.overlay {background:rgba(0,0,0,0.05);cursor:pointer;position:absolute;right:0;left:0;
 bottom:0;top:0;z-index:2;opacity:1;width:100%;height:100%;transition:all .3s linear;}
 span.overlay:before {content:&quot;\f002&quot;;font-family:FontAwesome;font-style:normal;font-weight:normal;font-size: 24px;width:24px;height:24px;top:50%;left:50%;margin:-20px;padding:10px;position:absolute;color:rgba(247,237,122,0.0);-ms-transform: scale(1.6);-webkit-transform: scale(1.6);-moz-transform: scale(1.6);transform: scale(1.6);transition:all .3s linear;-moz-transition:all .3s linear;-webkit-transition:all .3s linear;}
@@ -1701,7 +1692,7 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
 <div class='item-label'>
 <b:if cond='data:post.labels'>
 <b:loop values='data:post.labels' var='label'>
-  <span expr:hdv-label-show='data:label.name' ><a expr:href='data:label.url + &quot;?max-results=20&quot;' rel='tag'><data:label.name/></a></span><b:if cond='data:label.isLast != &quot;true&quot;'/>
+  <span><a expr:href='data:label.url + &quot;?max-results=12&quot;' rel='tag'><data:label.name/></a></span><b:if cond='data:label.isLast != &quot;true&quot;'/>
 </b:loop>
 </b:if>
 </div>
@@ -1729,25 +1720,65 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
            </div>
           <b:else/>
           <b:if cond='data:blog.pageType != &quot;item&quot;'>
-
 <b:if cond='data:blog.pageType != &quot;static_page&quot;'>
-
 <div class='post-body entry-content' expr:id='&quot;post-body-&quot; + data:post.id'>
            <div expr:id='&quot;summary&quot; + data:post.id' itemprop='articleBody'>
-          <div class='item-label-more'>
-          <b:loop values='data:post.labels' var='label'>
-          <span expr:hdv-label='data:label.name' ><a expr:href='data:label.url + &quot;?max-results=20&quot;' rel="tag"><data:label.name/></a></span>
-          </b:loop>
-          </div>
+          <data:post.snippet/>
            </div>
 <script type='text/javascript'>createSummary(&quot;summary<data:post.id/>&quot;);</script>
 </div>
-
 </b:if>
 
+<b:if cond='data:blog.pageType == &quot;index&quot;'>
+<div class='aishare'>
+<ul>
+<li><a class='lyco-twitter' expr:href='&quot;http://twitter.com/share?url=&quot; + data:post.url' rel='nofollow' target='_blank'><i class='fa fa-twitter'/><span class='inv'/></a></li>
+<li><a class='lyco-facebook' expr:href='&quot;http://www.facebook.com/sharer.php?u=&quot; + data:post.url' rel='nofollow' target='_blank'><i class='fa fa-facebook'/><span class='inv'/></a></li>
+<li><a class='lyco-googleplus' expr:href='&quot;http://plus.google.com/share?url=&quot; + data:post.url' rel='nofollow' target='_blank'><i class='fa fa-google-plus'/><span class='inv'/></a></li>
+</ul>
+</div>
+</b:if>
 
-
-
+	<div class='post-info'>
+<b:if cond='data:top.showAuthor'>
+            <b:if cond='data:post.authorProfileUrl'>
+			  <span class='author-info'>
+              <i class='fa fa-user'/>
+			  <span class='vcard'>
+			  <span class='fn'>
+                <a class='g-profile' expr:href='data:post.authorProfileUrl' rel='author' title='author profile'>
+                  <span><data:post.author/></span>
+                </a>
+              </span>
+			  </span>
+			  </span>
+            <b:else/>
+			  <span class='author-info'>
+              <span class='fn'>
+                <span><i class='fa fa-user'/> <data:post.author/></span>
+              </span>
+			  </span>
+            </b:if>
+        </b:if>
+		<b:if cond='data:top.showTimestamp'>
+        <b:if cond='data:post.url'>
+		  <span class='time-info'>
+          <i class='fa fa-calendar-o'/> <a class='timestamp-link' expr:href='data:post.url' rel='bookmark' title='permanent link'><abbr class='published updated' expr:title='data:post.timestampISO8601'><data:post.timestamp/></abbr></a>
+		  </span>
+        </b:if>
+        </b:if>
+        <b:if cond='data:blog.pageType != &quot;item&quot;'>
+          <b:if cond='data:blog.pageType != &quot;static_page&quot;'>
+            <b:if cond='data:post.allowComments'>
+			  <span class='comment-info'>
+              <i class='fa fa-comments'/> <a expr:href='data:post.addCommentUrl' expr:onclick='data:post.addCommentOnclick'> <b:if cond='data:post.numComments == 0'> 0 </b:if> <b:if cond='data:post.numComments == 1'>1 </b:if><b:if cond='data:post.numComments &gt; 1'><data:post.numComments/> Comments</b:if>
+			  </a>
+			  </span>
+            </b:if>
+          </b:if>
+        </b:if>
+		<b:include data='post' name='postQuickEdit'/>
+	</div>
 
 </b:if>
 
@@ -2239,16 +2270,16 @@ $(function() {
  });
 </script>
 
-<script src='https://aisuka-project.googlecode.com/svn/ai-dark.js' type='text/javascript'/>
+<script src='https://cdn.jsdelivr.net/npm/hdv-anivn/ai-dark.min.js' type='text/javascript'/>
 
 <b:if cond='data:blog.pageType != &quot;item&quot;'>
 <b:if cond='data:blog.pageType != &quot;static_page&quot;'>
-<script src='https://aisuka-project.googlecode.com/svn/imagesloaded.pkgd.min.js'/>
-<script src='https://aisuka-project.googlecode.com/svn/masonry.pkgd.min.js'/>
+<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 <script>
 	/* masonry */
 	jQuery(document).ready(function($) {
-            $(&#39;.blog-posts&#39;).masonry({
+      $(&#39;.blog-posts&#39;).masonry({
 			itemSelector:&#39;.post-outer&#39;,
 			isAnimated:true,
 			gutterWidth:0,
