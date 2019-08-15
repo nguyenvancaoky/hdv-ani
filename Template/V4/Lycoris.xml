@@ -2839,27 +2839,6 @@ $(function() {
         columnWidth: 0
       });
     });
-
-    $container.infiniteScroll({
-      path: '.blog-pager-older-link',
-      append: '.post',
-      history: false,
-      navSelector  : &#39;#blog-pager-older-link&#39;,
-      nextSelector : &#39;.blog-pager-older-link&#39;,
-      itemSelector : &#39;.post-outer&#39;,
-      loading: {
-          finishedMsg: &#39;No more pages to load.&#39;,
-          img: &#39;http://i.imgur.com/6RMhx.gif&#39;
-        }
-      },
-      function( newElements ) {
-        var $newElems = $( newElements ).css({ opacity: 0 });
-        $newElems.imagesLoaded(function(){
-          $newElems.animate({ opacity: 1 });
-          $container.masonry( &#39;appended&#39;, $newElems, true );
-        });
-      }
-    );
   });
 </script>
 </b:if>
