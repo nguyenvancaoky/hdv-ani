@@ -1106,7 +1106,7 @@ span.overlay:hover::before, span.overlay:hover::after {opacity:1;-webkit-transfo
 span.overlay .info-wrapper {width:100%;}
 .breadcrumbs,.vcard2,.post-footer {display:none;}
 #side-kanan,#PopularPosts1 {display:none;visibility:hidden;}
-
+.img-thumbnail video {max-height: 185px;}
 /* CSS Pseudo Label Info */
 .date-outer .date-posts .post-outer .post .label-info a:nth-child(1) {background:#ed7a69;}
 .date-outer .date-posts .post-outer .post .label-info a:nth-child(2) {background:#c48ed2;}
@@ -1248,6 +1248,16 @@ var image_height=0;
 image_tag='<img width="'+image_width+'" height="'+image_height+'" src="'+image_url.replace('/s72-c/','/w'+image_width+'-h'+image_height+'-c/')+'" alt="'+post_title.replace(/"/g,"")+'" title="'+post_title.replace(/"/g,"")+'"/>';
 if(post_title!="") return image_tag; else return "";
 }
+function bp_thumbnail(image_url,post_title)
+{
+if (image_url.includes('steamuserimages')) {
+  image_tag='<img src="'+image_url.replace('mw=640','mw=320')+'" alt="'+post_title.replace(/"/g,"")+'" title="'+post_title.replace(/"/g,"")+'"/>';
+} else {
+  image_tag='<video alt="'+post_title.replace(/"/g,"")+'" title="'+post_title.replace(/"/g,"")+'" autoplay="" loop="" muted="" playsinline=""><source src="'+image_url+'" type="video/mp4"></video>';
+}
+if(post_title!="") return image_tag; else return "";
+}
+
 
 //]]>
 </script>
@@ -1375,39 +1385,7 @@ function createPostSummary(s,r,m,k){var u,t=document,n=configSummary,i=t.getElem
 
   <b:section class='navbar' id='navbar' maxwidgets='1' showaddelement='no'>
     <b:widget id='Navbar1' locked='false' title='Navbar' type='Navbar'>
-      <b:includable id='main'>&lt;script type=&quot;text/javascript&quot;&gt;
-    function setAttributeOnload(object, attribute, val) {
-      if(window.addEventListener) {
-        window.addEventListener(&#39;load&#39;,
-          function(){ object[attribute] = val; }, false);
-      } else {
-        window.attachEvent(&#39;onload&#39;, function(){ object[attribute] = val; });
-      }
-    }
-  &lt;/script&gt;
-&lt;div id=&quot;navbar-iframe-container&quot;&gt;&lt;/div&gt;
-&lt;script type=&quot;text/javascript&quot; src=&quot;https://apis.google.com/js/plusone.js&quot;&gt;&lt;/script&gt;
-&lt;script type=&quot;text/javascript&quot;&gt;
-        gapi.load(&quot;gapi.iframes:gapi.iframes.style.bubble&quot;, function() {
-          if (gapi.iframes &amp;&amp; gapi.iframes.getContext) {
-            gapi.iframes.getContext().openChild({
-                url: &#39;https://www.blogger.com/navbar.g?targetBlogID\0757526094697669112775\46blogName\75Lycoris\46publishMode\75PUBLISH_MODE_BLOGSPOT\46navbarType\75DISABLED\46layoutType\75LAYOUTS\46searchRoot\75http://lycoris9.blogspot.com/search\46blogLocale\75in\46v\0752\46homepageUrl\75http://lycoris9.blogspot.com/\46readAccessMode\75PRIVATE\46blogFollowUrl\75https://plus.google.com/116842323872617754736\46vt\75-7693256477035107042&#39;,
-                where: document.getElementById(&quot;navbar-iframe-container&quot;),
-                id: &quot;navbar-iframe&quot;
-            });
-          }
-        });
-      &lt;/script&gt;&lt;script type=&quot;text/javascript&quot;&gt;
-(function() {
-var script = document.createElement(&#39;script&#39;);
-script.type = &#39;text/javascript&#39;;
-script.src = &#39;//pagead2.googlesyndication.com/pagead/js/google_top_exp.js&#39;;
-var head = document.getElementsByTagName(&#39;head&#39;)[0];
-if (head) {
-head.appendChild(script);
-}})();
-&lt;/script&gt;
-</b:includable>
+
     </b:widget>
   </b:section>
 
@@ -1452,7 +1430,7 @@ head.appendChild(script);
   <header class='header-wrapper'>
   <div class='ct-wrapper'>
     <b:section class='header' id='header' maxwidgets='1' showaddelement='no'>
-      <b:widget id='Header1' locked='true' title='Lycoris (Header)' type='Header'>
+      <b:widget id='Header1' locked='true' title='(Header)' type='Header'>
         <b:includable id='main'>
 
   <b:if cond='data:useImage'>
@@ -1548,8 +1526,8 @@ head.appendChild(script);
 <section class='hero' id='hero1'>
   <div class='inner1'>
     <div class='copyv'>
-    <h3>Lycoris</h3>
-    <p>Free Responsive Gallery Blogger Template</p>
+    <h3>Workshop</h3>
+    <p>Make Desktop Look Better.</p>
      <div id='mariber-social'>
 <ul>
 <li class='fb-item'>
@@ -2231,7 +2209,9 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
 	<b:if cond='data:blog.pageType != &quot;static_page&quot;'>
 
   <b:if cond='data:post.link'>
-    <a expr:href='data:post.url'><div class='img-thumbnail'><span class='overlay'><span CLASS="info-wrapper">Read More</span></span><img expr:alt='data:post.title' expr:src='data:post.link' expr:title='data:post.title'/></div>
+    <a expr:href='data:post.url'><div class='img-thumbnail'><span class='overlay'><span CLASS="info-wrapper">Read More</span></span><script type='text/javascript'>
+		document.write(bp_thumbnail(&quot;<data:post.link/>&quot;,&#39;<data:post.title/>&#39;));
+		</script></div>
 		</a>
   <b:else/>
 	<b:if cond='data:post.thumbnailUrl'>
@@ -2254,7 +2234,25 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
         <b:if cond='data:post.labels'>
 		  <span class='label-info'>
           <b:loop values='data:post.labels' var='label'>
+            <b:if cond='data:label.name == &quot;Video&quot;'>
             <a expr:href='data:label.url + &quot;?max-results=9&quot;' rel='tag'><i class='fa fa-tag'/> <data:label.name/></a><b:if cond='data:label.isLast != &quot;true&quot;'/>
+            <b:else/>
+
+            <b:if cond='data:label.name == &quot;Scene&quot;'>
+            <a expr:href='data:label.url + &quot;?max-results=9&quot;' rel='tag'><i class='fa fa-tag'/> <data:label.name/></a><b:if cond='data:label.isLast != &quot;true&quot;'/>
+            <b:else/>
+
+            <b:if cond='data:label.name == &quot;Application&quot;'>
+            <a expr:href='data:label.url + &quot;?max-results=9&quot;' rel='tag'><i class='fa fa-tag'/> <data:label.name/></a><b:if cond='data:label.isLast != &quot;true&quot;'/>
+            <b:else/>
+
+            <b:if cond='data:label.name == &quot;Web&quot;'>
+            <a expr:href='data:label.url + &quot;?max-results=9&quot;' rel='tag'><i class='fa fa-tag'/> <data:label.name/></a><b:if cond='data:label.isLast != &quot;true&quot;'/>
+
+            </b:if>
+            </b:if>
+            </b:if>
+            </b:if>
           </b:loop>
 		  </span>
         </b:if>
@@ -2286,7 +2284,22 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
 <div class='post-body entry-content' expr:id='&quot;post-body-&quot; + data:post.id'>
            <div expr:id='&quot;summary&quot; + data:post.id' itemprop='articleBody'>
              <b:loop values='data:post.labels' var='label'>
+               <b:if cond='data:label.name == &quot;Video&quot;'>
+               <b:else/>
+               <b:if cond='data:label.name == &quot;Scene&quot;'>
+               <b:else/>
+               <b:if cond='data:label.name == &quot;Application&quot;'>
+               <b:else/>
+               <b:if cond='data:label.name == &quot;Web&quot;'>
+               <b:else/>
+               <b:if cond='data:label.name == &quot;Wallpaper&quot;'>
+               <b:else/>
                <a expr:href='data:label.url + &quot;?max-results=9&quot;' rel='tag'><i class='fa fa-tag'/> <data:label.name/></a><b:if cond='data:label.isLast != &quot;true&quot;'/>
+               </b:if>
+               </b:if>
+               </b:if>
+               </b:if>
+               </b:if>
              </b:loop>
            </div>
 
@@ -2721,7 +2734,7 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
 
 <footer id='copyright'>
 <div id='copy'>
-  <p>Copyright &#169; 2014 <a expr:href='data:blog.homepageUrl'><data:blog.title/></a> All Right Reserved . Design by <a href='http://arlinadesign.blogspot.com/' rel='nofollow' target='_blank'>Arlina</a> . Powered by <a href='http://www.blogger.com'>Blogger</a></p>
+  <p>Copyright &#169; 2019 <a expr:href='data:blog.homepageUrl'><data:blog.title/></a> All Right Reserved .</p>
   </div>
   <div class='clear'/>
   </footer>
@@ -2792,16 +2805,17 @@ $(function() {
 </script>
 <b:if cond='data:blog.pageType != &quot;item&quot;'>
 <b:if cond='data:blog.pageType != &quot;static_page&quot;'>
-<script src='https://cdn.jsdelivr.net/npm/hdv-anivn/imageload.min.js'/>
-<script src='https://cdn.jsdelivr.net/npm/hdv-anivn/masonry.min.js'/>
+<script src="https://unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.min.js"></script>
+<script src='https://unpkg.com/imagesloaded@3.2.0/imagesloaded.pkgd.min.js'/>
+<script src='https://unpkg.com/masonry-layout@3.3.2/dist/masonry.pkgd.min.js'/>
 <script>
 	/* masonry */
 	jQuery(document).ready(function($) {
             $(&#39;.blog-posts&#39;).masonry({
-			itemSelector:&#39;.post-outer&#39;,
-			isAnimated:true,
-			gutterWidth:0,
-			columnWidth:0,
+      			itemSelector:&#39;.post-outer&#39;,
+      			isAnimated:true,
+      			gutterWidth:0,
+      			columnWidth:0,
             animationOptions: {
             duration:950,
             easing:&#39;easeInOutCubic&#39;,
@@ -2809,7 +2823,7 @@ $(function() {
           }
 
 		}).imagesLoaded(function() {
-			$(&#39;.blog-posts&#39;).masonry(&#39;reload&#39;);
+			$(&#39;.blog-posts&#39;).masonry(&#39;reloadItems&#39;);
 		});
 	});
 	</script>
@@ -2826,7 +2840,10 @@ $(function() {
       });
     });
 
-    $container.infinitescroll({
+    $container.infiniteScroll({
+      path: '.blog-pager-older-link',
+      append: '.post',
+      history: false,
       navSelector  : &#39;#blog-pager-older-link&#39;,
       nextSelector : &#39;.blog-pager-older-link&#39;,
       itemSelector : &#39;.post-outer&#39;,
