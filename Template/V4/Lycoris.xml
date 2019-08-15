@@ -465,7 +465,7 @@ img.comment_emo{margin:0;padding:0;vertical-align:middle}
 .comment_admin .comment_author_flag{display:inline;background:#fc4f3f;font-size:12px;
 font-weight:normal;padding:3px 6px;color:#fff;border-radius:2px;text-align:center;}
 .deleted-comment{background:#369fcf;color:#fff;line-height:22px;padding:12px 15px 12px 15px;margin:5px 0;display:block;}
-.comment-form p{background:#dcbc83;color:#fff;font-weight:700;font-size:14px;font-family:&#39;Roboto&#39;,sans-serif;text-transform:uppercase;letter-spacing:0;padding:10px 15px 10px 60px;margin:5px 0 5px 0;line-height:20px;position:relative;display:inline-block;}
+.comment-form p{background:#dcbc83;color:#fff;font-weight:700;font-size:14px;font-family:&#39;Roboto&#39;,sans-serif;text-transform:uppercase;letter-spacing:0;padding:10px 0px 10px;margin:5px 0 20px 0;line-height:20px;position:relative;display:inline-block;}
 .comment-form p:before {content:&quot;\f044&quot;;font-family:FontAwesome;font-size:24px;font-style:normal;font-weight:normal;top:0;left:0;position:absolute;padding:7px 12px;background:#e1c697;color:#fff;line-height:26px;}
 div.comment_avatar img[src=&#39;http://img1.blogblog.com/img/openid16-rounded.gif&#39;]{content:url(http://2.bp.blogspot.com/-8NurYzHIoWQ/Ujc_oLurXII/AAAAAAAAFek/XhAm-oLwg7Q/s45-c/gravatar.png)}
 div:target .comment_inner{background:#fff;transition:all 15s ease-out}
@@ -1345,13 +1345,23 @@ function createPostSummary(s,r,m,k){var u,t=document,n=configSummary,i=t.getElem
 <body>
 
 <div id='fb-root'/>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = &quot;//connect.facebook.net/id_ID/sdk.js#xfbml=1&quot;;&quot;;
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, &#39;script&#39;, &#39;facebook-jssdk&#39;));</script>
+
+    <script>
+      //<![CDATA[
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId            : '192195697962437',
+          autoLogAppEvents : true,
+          xfbml            : true,
+          version          : 'v4.0'
+        });
+      };
+    //]]>
+    </script>
+
+    <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
+
+
 
 <b:if cond='data:blog.pageType == &quot;error_page&quot;'>
 <div id='oopss'>
@@ -2219,6 +2229,11 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
        <article class='post hentry'>
         <b:if cond='data:blog.pageType != &quot;item&quot;'>
 	<b:if cond='data:blog.pageType != &quot;static_page&quot;'>
+
+  <b:if cond='data:post.link'>
+    <a expr:href='data:post.url'><div class='img-thumbnail'><span class='overlay'><span CLASS="info-wrapper">Read More</span></span><img expr:alt='data:post.title' expr:src='data:post.link' expr:title='data:post.title'/></div>
+		</a>
+  <b:else/>
 	<b:if cond='data:post.thumbnailUrl'>
 		<a expr:href='data:post.url'><div class='img-thumbnail'><span class='overlay'><span CLASS="info-wrapper">Read More</span></span><script type='text/javascript'>
 		document.write(bp_thumbnail_resize(&quot;<data:post.thumbnailUrl/>&quot;,&#39;<data:post.title/>&#39;));
@@ -2233,6 +2248,7 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
 		</a>
 	</b:if>
     </b:if>
+      </b:if>
 
 <b:if cond='data:blog.pageType == &quot;index&quot;'>
         <b:if cond='data:post.labels'>
@@ -2269,63 +2285,13 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
 <b:if cond='data:blog.pageType != &quot;static_page&quot;'>
 <div class='post-body entry-content' expr:id='&quot;post-body-&quot; + data:post.id'>
            <div expr:id='&quot;summary&quot; + data:post.id' itemprop='articleBody'>
-          <data:post.snippet/>
+             <b:loop values='data:post.labels' var='label'>
+               <a expr:href='data:label.url + &quot;?max-results=9&quot;' rel='tag'><i class='fa fa-tag'/> <data:label.name/></a><b:if cond='data:label.isLast != &quot;true&quot;'/>
+             </b:loop>
            </div>
 
 </div>
 </b:if>
-
-<b:if cond='data:blog.pageType == &quot;index&quot;'>
-<div class='aishare'>
-<ul>
-<li><a class='lyco-twitter' expr:href='&quot;http://twitter.com/share?url=&quot; + data:post.url' rel='nofollow' target='_blank'><i class='fa fa-twitter'/><span class='inv'/></a></li>
-<li><a class='lyco-facebook' expr:href='&quot;http://www.facebook.com/sharer.php?u=&quot; + data:post.url' rel='nofollow' target='_blank'><i class='fa fa-facebook'/><span class='inv'/></a></li>
-<li><a class='lyco-googleplus' expr:href='&quot;http://plus.google.com/share?url=&quot; + data:post.url' rel='nofollow' target='_blank'><i class='fa fa-google-plus'/><span class='inv'/></a></li>
-</ul>
-</div>
-</b:if>
-
-	<div class='post-info'>
-<b:if cond='data:top.showAuthor'>
-            <b:if cond='data:post.authorProfileUrl'>
-			  <span class='author-info'>
-              <i class='fa fa-user'/>
-			  <span class='vcard'>
-			  <span class='fn'>
-                <a class='g-profile' expr:href='data:post.authorProfileUrl' rel='author' title='author profile'>
-                  <span><data:post.author/></span>
-                </a>
-              </span>
-			  </span>
-			  </span>
-            <b:else/>
-			  <span class='author-info'>
-              <span class='fn'>
-                <span><i class='fa fa-user'/> <data:post.author/></span>
-              </span>
-			  </span>
-            </b:if>
-        </b:if>
-		<b:if cond='data:top.showTimestamp'>
-        <b:if cond='data:post.url'>
-		  <span class='time-info'>
-          <i class='fa fa-calendar-o'/> <a class='timestamp-link' expr:href='data:post.url' rel='bookmark' title='permanent link'><abbr class='published updated' expr:title='data:post.timestampISO8601'><data:post.timestamp/></abbr></a>
-		  </span>
-        </b:if>
-        </b:if>
-        <b:if cond='data:blog.pageType != &quot;item&quot;'>
-          <b:if cond='data:blog.pageType != &quot;static_page&quot;'>
-            <b:if cond='data:post.allowComments'>
-			  <span class='comment-info'>
-              <i class='fa fa-comments'/> <a expr:href='data:post.addCommentUrl' expr:onclick='data:post.addCommentOnclick'> <b:if cond='data:post.numComments == 0'> 0 </b:if> <b:if cond='data:post.numComments == 1'>1 </b:if><b:if cond='data:post.numComments &gt; 1'><data:post.numComments/> Comments</b:if>
-			  </a>
-			  </span>
-            </b:if>
-          </b:if>
-        </b:if>
-		<b:include data='post' name='postQuickEdit'/>
-	</div>
-
 </b:if>
 
           <b:if cond='data:blog.pageType == &quot;item&quot;'>
@@ -2880,6 +2846,81 @@ $(function() {
   });
 </script>
 </b:if>
+</b:if>
+
+<b:if cond='data:blog.pageType == &quot;static_page&quot;'>
+<script type='text/javascript'>
+//<![CDATA[
+function getQueryVariable(variable)
+{
+  var query = window.location.search.substring(1);
+  var vars = query.split("&");
+  for (var i = 0; i < vars.length; i++)
+  {
+    var pair = vars[i].split("=");
+    if (pair[0] == variable)
+    {
+      return pair[1];
+    }
+  }
+  return (false);
+}
+var time = 5;
+var page = window.atob(getQueryVariable("t"));;
+
+function countDown()
+{
+  time--;
+  gett("timecount").innerHTML = time;
+  if (time == 0)
+  {
+    clearInterval(t);
+    $('#button1').show();
+    $('#button2').show();
+    window.location = page;
+  }
+}
+function gett(id)
+{
+  if (document.getElementById) return document.getElementById(id);
+  if (document.all) return document.all.id;
+  if (document.layers) return document.layers.id;
+  if (window.opera) return window.opera.id;
+}
+function init()
+{
+  if (gett('timecount'))
+  {
+    t = setInterval(countDown, 1000);
+    gett("timecount").innerHTML = time;
+  }
+  else
+  {
+    setTimeout(init, 50);
+  }
+}
+document.onload = init();
+$(document).ready(function()
+{
+  var anime = ['https://i.imgur.com/rp2rZki.gif', 'https://i.imgur.com/MnODy5P.gif', 'https://i.imgur.com/1zrDH12.gif','https://i.imgur.com/8ZS6sHi.gif','https://i.imgur.com/NJc0kF7.gif','https://media.giphy.com/media/vwFJbT5uIBNja/giphy.gif','https://media.giphy.com/media/p5yZ61SsIbJe/giphy.gif','https://media.giphy.com/media/vwFJbT5uIBNja/giphy.gif','https://media.giphy.com/media/Pl4LoOqZL8skE/giphy.gif','https://media.giphy.com/media/kbslrc9MmaWbu/giphy.gif','https://media.giphy.com/media/ZABW46fcjONdS/giphy.gif','https://media.giphy.com/media/f3AgI5sw7HD7q/giphy.gif','https://media.giphy.com/media/GsKXqgN0vpqSs/giphy.gif'];
+  var rand_anime = anime[Math.floor(Math.random() * anime.length)];
+  $("#anime").attr("src",rand_anime);
+
+  $('#button1').click(function()
+  {
+    window.location = page;
+  });
+});
+function closeWindow()
+{
+  window.open('', '_parent', '');
+  window.close();
+}
+
+
+
+//]]>
+</script>
 </b:if>
 
 </body>
