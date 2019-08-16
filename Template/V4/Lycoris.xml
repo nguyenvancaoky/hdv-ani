@@ -718,6 +718,22 @@ font-style:normal;font-weight:normal;text-decoration:none;font-size:30px;color:#
 #wrapper,#sider{width:100%;margin:0 auto;}
 .copyv p {font-size:14px;}
 #mariber-social {display:none;}}
+
+/* CSS HDV */
+.is-loading {
+  background-color: black;
+  background-image: url(https://unpkg.com/hdv-anivn@1.0.8/svg/loading.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 185px!important;
+}
+.is-broken {
+  background-color: black;
+  background-image: url(https://3.bp.blogspot.com/-uCyCXlmBAhM/XVYvznenJgI/AAAAAAAAH7I/VL-RkeOiIOMwDp6RnYPKjTFAwDXjFbs7ACLcBGAs/s400/image-not-found.jpg);
+  background-position: center;
+  height: 185px!important;
+}
+
 </style>
 
 <b:if cond='data:blog.pageType == &quot;item&quot;'>
@@ -1106,7 +1122,7 @@ span.overlay:hover::before, span.overlay:hover::after {opacity:1;-webkit-transfo
 span.overlay .info-wrapper {width:100%;}
 .breadcrumbs,.vcard2,.post-footer {display:none;}
 #side-kanan,#PopularPosts1 {display:none;visibility:hidden;}
-.img-thumbnail video {max-height: 185px;}
+.img-thumbnail video {height: 185px;}
 /* CSS Pseudo Label Info */
 .date-outer .date-posts .post-outer .post .label-info a:nth-child(1) {background:#ed7a69;}
 .date-outer .date-posts .post-outer .post .label-info a:nth-child(2) {background:#c48ed2;}
@@ -1251,9 +1267,9 @@ if(post_title!="") return image_tag; else return "";
 function bp_thumbnail(image_url,post_title)
 {
 if (image_url.includes('steamuserimages')) {
-  image_tag='<img src="'+image_url.replace('mw=640','mw=320')+'" alt="'+post_title.replace(/"/g,"")+'" title="'+post_title.replace(/"/g,"")+'"/>';
+  image_tag='<img class="is-loading" src="'+image_url.replace('mw=640','mw=320')+'" alt="'+post_title.replace(/"/g,"")+'" title="'+post_title.replace(/"/g,"")+'"/>';
 } else {
-  image_tag='<video alt="'+post_title.replace(/"/g,"")+'" title="'+post_title.replace(/"/g,"")+'" autoplay="" loop="" muted="" playsinline=""><source src="'+image_url+'" type="video/mp4"></video>';
+  image_tag='<video class="is-loading video_gird" preload="auto" alt="'+post_title.replace(/"/g,"")+'" title="'+post_title.replace(/"/g,"")+'" autoplay loop muted playsinline><source src="'+image_url+'" type="video/mp4"></video>';
 }
 if(post_title!="") return image_tag; else return "";
 }
@@ -2187,7 +2203,7 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
     <div class='pagenav'>
         <script type='text/javascript'>
         var pageNaviConf = {
-            perPage:9,
+            perPage:15,
             numPages:5,
             firstText:&quot;<i class='fa fa-ellipsis-h fa-lg'/>&quot;,
             lastText:&quot;<i class='fa fa-ellipsis-h fa-lg'/>&quot;,
@@ -2809,38 +2825,60 @@ $(function() {
 <script src='https://unpkg.com/imagesloaded@3.2.0/imagesloaded.pkgd.min.js'/>
 <script src='https://unpkg.com/masonry-layout@3.3.2/dist/masonry.pkgd.min.js'/>
 <script>
-	/* masonry */
-	jQuery(document).ready(function($) {
-            $(&#39;.blog-posts&#39;).masonry({
-      			itemSelector:&#39;.post-outer&#39;,
-      			isAnimated:true,
-      			gutterWidth:0,
-      			columnWidth:0,
-            animationOptions: {
-            duration:950,
-            easing:&#39;easeInOutCubic&#39;,
-            queue:false
-          }
+//<![CDATA[
 
-		}).imagesLoaded(function() {
-			$(&#39;.blog-posts&#39;).masonry(&#39;reloadItems&#39;);
-		});
-	});
+
+
+  var $grid = $('.blog-posts').masonry({
+    itemSelector: '.post-outer',
+    isAnimated: true,
+    gutterWidth: 0,
+    columnWidth: 0,
+    animationOptions: {
+      duration: 950,
+      easing: 'easeInOutCubic',
+      queue: false
+    }
+  });
+
+  function LoadGrid() {
+    $grid.masonry('reloadItems');
+    $grid.masonry('layout');
+  }
+  function isLoadingVideo(x) {
+    console.log('Load Video Grid --->');
+    x.classList.remove('is-loading');
+    LoadGrid();
+  }
+
+  $grid.imagesLoaded().progress(function(instance, image) {
+    var result = image.isLoaded ? 'loaded' : 'broken';
+    console.log('image is ' + result + ' for ' + image.img.src);
+    if (image.isLoaded) {
+      $(image.img).removeClass('is-loading');
+    } else {
+      $(image.img).removeClass('is-loading');
+      $(image.img).addClass('is-broken');
+    }
+    LoadGrid();
+  })
+  .always( function( instance ) {
+    console.log('all images loaded');
+    var video_gird = document.getElementsByClassName("video_gird");
+    var i_video_gird;
+    for (i_video_gird = 0; i_video_gird < video_gird.length; i_video_gird++) {
+      video_gird[i_video_gird].oncanplay = isLoadingVideo(video_gird[i_video_gird]);
+    }
+  });
+
+
+
+
+
+
+//]]>
 	</script>
 
-<script>
-  $(function(){
-
-    var $container = $(&#39;.blog-posts&#39;);
-
-    $container.imagesLoaded(function(){
-      $container.masonry({
-        itemSelector: &#39;.post-outer&#39;,
-        columnWidth: 0
-      });
-    });
-  });
-</script>
 </b:if>
 </b:if>
 

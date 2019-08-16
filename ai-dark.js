@@ -7,3 +7,8 @@ if (image_url.includes('steamuserimages')) {
 }
 if(post_title!="") return image_tag; else return "";
 }
+
+
+function isLoadingVideo() {
+
+}
