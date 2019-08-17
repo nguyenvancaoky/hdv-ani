@@ -1,85 +1,96 @@
-function bp_thumbnail(image_url,post_title)
-{
-if (image_url.includes('steamuserimages')) {
-  image_tag='<img src="'+image_url.replace('mw=640','mw=320')+'" alt="'+post_title.replace(/"/g,"")+'" title="'+post_title.replace(/"/g,"")+'"/>';
-} else {
-  image_tag='<video alt="'+post_title.replace(/"/g,"")+'" title="'+post_title.replace(/"/g,"")+'" autoplay="" loop="" muted="" playsinline=""><source src="'+image_url+'" type="video/mp4"></video>';
+
+
+// ==UserScript==
+// @name         UPLOAD TO BLOGER
+// @namespace    https://workshop.wallpaperhdv.net/
+// @version      0.1
+// @description  :)
+// @author       ANI-VN
+// @oujs:author  ANI-VN
+// @match        https://steamcommunity.com/workshop/browse/?appid=431960**
+// @homepageURL  https://github.com/unfaiyted/line-stickershop-copier
+// @grant        GM_addStyle
+// @grant        GM_setClipboard
+// @run-at       document-end
+// ==/UserScript==
+
+GM_addStyle(`
+
+.workshopItemSubscriptionControls{
+visibility: visible !important;
 }
-if(post_title!="") return image_tag; else return "";
-}
+
+`);
 
 
-function isLoadingVideo() {
+(function() {
+    window.addEventListener('load', function() {
+        'use strict';
 
-}
-
-
-
-
+        // Here You can type your custom JavaScript...
 
 
+        function testlog(){
+            console.log('aaaa');
+        }
+
+
+        const body = document.getElementsByTagName('body')[0];
+        const images = document.querySelectorAll('.workshopItem');
+        //mdCMN09LiInner
+        //mdCMN09Image
+
+        images.forEach((image) => {
+            const item = image.getElementsByClassName('.workshopItemPreviewHolder')[0];
+            const id = item.getAttribute("id").replace("sharedfile_","/w0-h0-c/");
+
+            console.log(id);
+
+            const copyText = sticker
+            .replace('url("','')
+            .replace('")','');
+
+            const btn = '<div class="workshopItemSubscriptionControls aspectratio_square hdv" style="top: 8px;"><a href="" class="general_btn subscribe "><div class="subscribeIcon"></div></a></div>';
+          '
+
+            image.appendChild(btn);
+
+            btn.addEventListener("click", (e) => {
+                const copyText = e.target.getAttribute('data-clipboard-text');
+                console.log("copy clicked");
+
+                //  GM_setClipboard(copyText);
+
+                navigator.clipboard.writeText(copyText).then(function() {
+                    console.log('Async: Copying to clipboard was successful!');
+                }, function(err) {
+                    console.error('Async: Could not copy text: ', err);
+                });
+
+            });
+
+        });
+
+        // Your code here...
+
+    }, false);
+
+})();
 
 
 
+images.forEach((image) => {
+
+    const id = image.getAttribute("id").replace("sharedfile_","");
+    console.log(item);
+
+    var ret = GM_xmlhttpRequest({
+        method: "GET",
+        url: "http://localhost:2002/check.php?id=" + id,
+        onload: function(res) {
+            console.log(res.responseText);
+        }
+    });
 
 
-
-
-
-<b:widget id='PopularPosts1' locked='false' title='Weekly Posts' type='PopularPosts'>
-  <b:includable id='main' var='postl'>
-<b:if cond='data:blog.pageType == &quot;item&quot;'>
-<b:if cond='data:title'><h2><data:title/></h2></b:if>
-<div class='widget-content popular-posts'>
-<ul>
-  <b:loop values='data:posts' var='post'>
-
-  <li>
-    <b:if cond='data:showThumbnails == &quot;false&quot;'>
-      <b:if cond='data:showSnippets == &quot;false&quot;'>
-        <!-- (1) No snippet/thumbnail -->
-        <a expr:href='data:post.href' expr:title='data:post.title'><data:post.title/></a>
-      <b:else/>
-        <!-- (2) Show only snippets -->
-        <div class='item-title'><a expr:href='data:post.href' expr:title='data:post.title'><data:post.title/></a></div>
-        <div class='item-snippet'><data:post.snippet/></div>
-      </b:if>
-    <b:else/>
-      <b:if cond='data:showSnippets == &quot;false&quot;'>
-        <!-- (3) Show only thumbnails -->
-        <div class='item-thumbnail-only'>
-          <b:if cond='data:post.thumbnail'>
-            <div class='item-thumbnail'>
-              <a expr:href='data:post.href' expr:title='data:post.title' target='_blank'>
-                <script type='text/javascript'>
-
-                </script>
-              </a>
-            </div>
-          </b:if>
-          <div class='item-title'><a expr:href='data:post.href' expr:title='data:post.title'><data:post.title/></a></div>
-        </div>
-        <div style='clear: both;'/>
-      <b:else/>
-        <!-- (4) Show snippets and thumbnails -->
-        <div class='item-content'>
-          <b:if cond='data:post.thumbnail'>
-            <div class='item-thumbnail'>
-              <a expr:href='data:post.href' target='_blank'>
-                <img expr:alt='data:post.title' expr:height='data:thumbnailSize' expr:src='data:post.thumbnail' expr:title='data:post.title' expr:width='data:thumbnailSize'/>
-              </a>
-            </div>
-          </b:if>
-          <div class='item-title'><a expr:href='data:post.href' expr:title='data:post.title'><data:post.title/></a></div>
-          <div class='item-snippet'><data:post.snippet/></div>
-        </div>
-        <div style='clear: both;'/>
-      </b:if>
-    </b:if>
-  </li>
-  </b:loop>
-</ul>
-</div>
-</b:if>
-</b:includable>
-</b:widget>
+});
