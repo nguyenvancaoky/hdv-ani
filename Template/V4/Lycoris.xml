@@ -265,7 +265,7 @@ font-style:normal;font-weight:normal;text-decoration:none;font-size:30px;color:#
 #cssmenu &gt; ul &gt; li {cursor:pointer;background:transparent;color:#369fcf;}
 #cssmenu &gt; ul &gt; li:first-child {border-top:none;}
 #cssmenu &gt; ul &gt; li &gt; a {font-size:14px;display:block;color:#818d99;background:#fff;padding:12px 15px;}
-#cssmenu &gt; ul &gt; li &gt; a:hover {text-decoration:none;color:#e5bd77}
+#cssmenu &gt; ul &gt; li &gt; a:hover {text-decoration:none;color:#ffffff}
 #cssmenu &gt; ul &gt; li.active {font-weight:700;}
 #cssmenu &gt; ul &gt; li.home .close-menu{background:#e5bd77;color:#fff;font-size:18px;font-weight:700;padding:12px 15px;display:block;}
 #cssmenu &gt; ul &gt; li.has-sub &gt; a:after {content:&#39;&#39;;position: absolute;top:15px;right:10px;border:5px solid transparent;border-left:5px solid #818d99;}
@@ -450,9 +450,9 @@ div.comment_inner.comment_admin{background:#f7f8f9;margin-top:0;}
 .comment_reply_form{padding:0 0 0 70px}
 .comment_reply_form .comment-form{width:99%}
 img.comment_emo{margin:0;padding:0;vertical-align:middle}
-.comment_emo_list{display:table;clear:both;background:#fff;border:1px solid #e7e8ea;margin:10px auto;}
+.comment_emo_list{display: table;clear: both;background: #fff;border: 1px solid #e7e8ea;margin: 10px auto;padding: 50px 90px;}
 .comment_child emo_list{margin:10px auto;}
-.comment_emo_list .item{float:left;text-align:center;margin:10px 10px 0 0;height:40px;width:41px;opacity:0.8;transition:all 0.3s ease-in-out;}
+.comment_emo_list .item{float: left;text-align: center;margin: 10px 10px 0 0;height: 90px;width: 85px;opacity: 0.8;transition: all 0.3s ease-in-out;}
 .comment_emo_list .item:hover{opacity:1;}
 .comment_child .comment_emo_list .item{opacity:0.8;transition:all 0.3s ease-in-out;}
 .comment_child .comment_emo_list .item:hover{opacity:1;}
@@ -539,7 +539,7 @@ border-radius:2px 2px 3px 3px;font-weight:400;transition:all .2s linear;}
 /* CSS Popular Posts */
 .PopularPosts .widget-content ul{list-style-type:none;overflow:hidden;}
 #PopularPosts1 ul li .item-thumbnail{overflow:hidden;float:right;margin-left:10px;}
-#PopularPosts1 img {overflow:hidden;width:72px;height:72px;-ms-transform: scale(1.0);-webkit-transform: scale(1.0);-moz-transform: scale(1.0);transform: scale(1.0);transition:all .4s linear;-moz-transition:all .4s linear;-webkit-transition:all .4s linear;}
+#PopularPosts1 img {overflow:hidden;width:280px;height:165px;-ms-transform: scale(1.0);-webkit-transform: scale(1.0);-moz-transform: scale(1.0);transform: scale(1.0);transition:all .4s linear;-moz-transition:all .4s linear;-webkit-transition:all .4s linear;}
 #PopularPosts1 img:hover{-ms-transform: scale(1.2);-webkit-transform: scale(1.2);-moz-transform: scale(1.2);transform: scale(1.2);transition:all .4s linear;-moz-transition:all .4s linear;-webkit-transition:all .4s linear;}
 .PopularPosts .widget-content ul li{position:relative;padding:0;margin:10px auto;}
 .PopularPosts .widget-content ul li:first-child {margin-top:0;}
@@ -559,7 +559,7 @@ border-radius:2px 2px 3px 3px;font-weight:400;transition:all .2s linear;}
 .PopularPosts .widget-content ul li:hover:nth-child(1),.PopularPosts .widget-content ul li:hover:nth-child(2),.PopularPosts .widget-content ul li:hover:nth-child(3),.PopularPosts .widget-content ul li:hover:nth-child(4),.PopularPosts .widget-content ul li:hover:nth-child(5),.PopularPosts .widget-content ul li:hover:nth-child(6),.PopularPosts .widget-content ul li:hover:nth-child(7),.PopularPosts .widget-content ul li:hover:nth-child(8),.PopularPosts .widget-content ul li:hover:nth-child(9),.PopularPosts .widget-content ul li:hover:nth-child(10){background:#fff;}
 .PopularPosts .widget-content{background:#fff;}
 .PopularPosts .item-thumbnail{float:left;padding:0;margin:0;}
-.PopularPosts .item-title {color:#b2b5be;font-weight:400;font-size:13px;padding:5px;}
+.PopularPosts .item-title {color:#b2b5be;font-weight:400;font-size:13px;padding:165px 15px 5px 20px;}
 .PopularPosts .item-snippet {display:none;font-size:13px;color:#b2b5be;overflow:hidden;text-align:justify;}
 
 .sidebar .label-size {position:relative;text-transform:none;text-decoration:none;font-size:13px;font-family:&#39;Roboto&#39;;}
@@ -610,7 +610,7 @@ width:450px;margin-top:35px;}
 #subscribe-box .emailfield .submitbutton:hover{background:#ed8e80;color:#fff;}
 
 /* CSS Feed Rotator */
-.slider-rotator{width:90%!important;height:340px;background-color:#e5bd77;padding:10px;font-size:11px/1.4;font-family:&#39;Roboto&#39;,Verdana,Arial,Sans-Serif;color:#fff;margin:0 auto;position:relative;overflow:hidden;text-align:left}
+.slider-rotator{width:90%!important;height:340px;background-color:#ffffff;padding:10px;font-size:11px/1.4;font-family:&#39;Roboto&#39;,Verdana,Arial,Sans-Serif;color:#fff;margin:0 auto;position:relative;overflow:hidden;text-align:left}
 .slider-rotator.loading{display:none;background-position:50% 50%;background-repeat:no-repeat}
 .slider-rotator .slider-item{position:absolute;padding:0;background-color:transparent;top:0;right:0;bottom:auto;left:0;display:none;}
 .slider-rotator .image-wrapper{}
@@ -727,6 +727,13 @@ font-style:normal;font-weight:normal;text-decoration:none;font-size:30px;color:#
   background-repeat: no-repeat;
   height: 185px!important;
 }
+.relhead-is-loading {
+    background-color: black;
+    background-image: url(https://unpkg.com/hdv-anivn@1.0.8/svg/loading.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 300px;
+}
 .is-broken {
   background-color: black;
   background-image: url(https://3.bp.blogspot.com/-uCyCXlmBAhM/XVYvznenJgI/AAAAAAAAH7I/VL-RkeOiIOMwDp6RnYPKjTFAwDXjFbs7ACLcBGAs/s400/image-not-found.jpg);
@@ -770,8 +777,7 @@ ul#relpost_img_sum li {float:left;list-style: none outside none;margin:0 14px 0 
 ul#relpost_img_sum li a {display:block;}
 ul#relpost_img_sum li img {background-color:#fdfdfd;float:left;margin-right:10px;background: none repeat scroll 0 0 #fdfdfd;padding:3px;transition:all 1s ease-out;}
 ul#relpost_img_sum li img:hover {background-color:#fff;opacity:0.9;}
-ul#relpost_img_sum li a.relinkjdulx {background-image:none;color:#444;
-display:block;font-family:&#39;Roboto&#39;;font-size:13px;font-weight:normal;overflow:hidden;padding:10px 5px;text-transform:none;}
+ul#relpost_img_sum li a.relinkjdulx {display: table-cell!important;background-image:none;color:#444;display:block;font-family:&#39;Roboto&#39;;font-size:13px;font-weight:normal;overflow:hidden;padding:10px 5px;text-transform:none;}
 
 /* CSS Item Responsive */
 @media only screen and (max-width:640px){
@@ -1273,8 +1279,15 @@ if (image_url.includes('steamuserimages')) {
 }
 if(post_title!="") return image_tag; else return "";
 }
-
-
+function item_thumbnail(image_url,post_title)
+{
+if (image_url.includes('steamuserimages')) {
+  image_tag='<img alt="thumbnails" src="'+image_url.replace('mw=640','mw=320')+'" title="'+post_title.replace(/"/g,"")+'"/>&#65279;';
+} else {
+  image_tag='<video class="is-loading video_gird" preload="auto" alt="'+post_title.replace(/"/g,"")+'" title="'+post_title.replace(/"/g,"")+'" autoplay loop muted playsinline><source src="'+image_url+'" type="video/mp4"></video>';
+}
+if(post_title!="") return image_tag; else return "";
+}
 //]]>
 </script>
 </b:if>
@@ -1283,10 +1296,143 @@ if(post_title!="") return image_tag; else return "";
 <b:if cond='data:blog.pageType == &quot;item&quot;'>
 <script type='text/javascript'>
 //<![CDATA[
+
+
 var relnojudul = 0;
 var relmaxtampil = 6;
 var numchars = 100;
-var reljudul=new Array();var relurls=new Array();var relcuplikan=new Array();var relgambar=new Array();function saringtags(g,h){var e=g.split("<");for(var f=0;f<e.length;f++){if(e[f].indexOf(">")!=-1){e[f]=e[f].substring(e[f].indexOf(">")+1,e[f].length)}}e=e.join("");e=e.substring(0,h-1);return e}function relpostimgcuplik(h){for(var e=0;e<h.feed.entry.length;e++){var g=h.feed.entry[e];reljudul[relnojudul]=g.title.$t;postcontent="";if("content" in g){postcontent=g.content.$t}else{if("summary" in g){postcontent=g.summary.$t}}relcuplikan[relnojudul]=saringtags(postcontent,numchars);if("media$thumbnail" in g){postimg=g.media$thumbnail.url}else{postimg="http://1.bp.blogspot.com/-htG7vy9vIAA/Tp0KrMUdoWI/AAAAAAAABAU/e7XkFtErqsU/s1600/grey.GIF"}relgambar[relnojudul]=postimg;for(var f=0;f<g.link.length;f++){if(g.link[f].rel=="alternate"){relurls[relnojudul]=g.link[f].href;break}}relnojudul++}}function contains(a,e){for(var f=0;f<a.length;f++){if(a[f]==e){return true}}return false}function artikelterkait(){var v=new Array(0);var w=new Array(0);var x=new Array(0);var A=new Array(0);for(var u=0;u<relurls.length;u++){if(!contains(v,relurls[u])){v.length+=1;v[v.length-1]=relurls[u];w.length+=1;w[w.length-1]=reljudul[u];x.length+=1;x[x.length-1]=relcuplikan[u];A.length+=1;A[A.length-1]=relgambar[u]}}reljudul=w;relurls=v;relcuplikan=x;relgambar=A;for(var u=0;u<reljudul.length;u++){var B=Math.floor((reljudul.length-1)*Math.random());var i=reljudul[u];var s=relurls[u];var y=relcuplikan[u];var C=relgambar[u];reljudul[u]=reljudul[B];relurls[u]=relurls[B];relcuplikan[u]=relcuplikan[B];relgambar[u]=relgambar[B];reljudul[B]=i;relurls[B]=s;relcuplikan[B]=y;relgambar[B]=C}var r=0;var D=Math.floor((reljudul.length-1)*Math.random());var z=D;var q;var t=document.URL;while(r<relmaxtampil){if(relurls[D]!=t){q="<li class='news-title clearfix'>";q+="<a href='"+relurls[D]+"' rel='nofollow' target='_top' title='"+reljudul[D]+"'><div class='overlayb'></div><img src='"+relgambar[D]+"' /></a>";q+="<a class='relinkjdulx' href='"+relurls[D]+"' target='_top'>"+reljudul[D]+"</a>";q+="<span class='news-text'>"+relcuplikan[D]+"</span>";q+="</li>";document.write(q);r++;if(r==relmaxtampil){break}}if(D<reljudul.length-1){D++}else{D=0}if(D==z){break}}};
+var reljudul = new Array();
+var relurls = new Array();
+var relcuplikan = new Array();
+var relgambar = new Array();
+
+function r_thumbnail(image_url,q)
+{
+if (image_url.includes('steamuserimages')) {
+  image_tag= '<img class="relhead-is-loading" alt="' + q + '" src="' + image_url.replace('mw=640','mw=280') + '">';
+} else {
+  image_tag= '<video class="is-loading video_gird" preload="auto" alt="'+q+'" autoplay loop muted playsinline><source src="'+image_url+'" type="video/mp4"></video>';
+}
+return image_tag;
+}
+
+function saringtags(g, h) {
+  var e = g.split("<");
+  for (var f = 0; f < e.length; f++) {
+    if (e[f].indexOf(">") != -1) {
+      e[f] = e[f].substring(e[f].indexOf(">") + 1, e[f].length)
+    }
+  }
+  e = e.join("");
+  e = e.substring(0, h - 1);
+  return e
+}
+
+function relpostimgcuplik(h) {
+  for (var e = 0; e < h.feed.entry.length; e++) {
+    var g = h.feed.entry[e];
+    reljudul[relnojudul] = g.title.$t;
+    postcontent = "";
+    if ("content" in g) {
+      postcontent = g.content.$t
+    } else {
+      if ("summary" in g) {
+        postcontent = g.summary.$t
+      }
+    }
+    relcuplikan[relnojudul] = saringtags(postcontent, numchars);
+    if ("media$thumbnail" in g) {
+      postimg = g.link[0].href
+    } else {
+      postimg = "http://1.bp.blogspot.com/-htG7vy9vIAA/Tp0KrMUdoWI/AAAAAAAABAU/e7XkFtErqsU/s1600/grey.GIF"
+    }
+    relgambar[relnojudul] = postimg;
+    for (var f = 0; f < g.link.length; f++) {
+      if (g.link[f].rel == "alternate") {
+        relurls[relnojudul] = g.link[f].href;
+        break
+      }
+    }
+    relnojudul++
+  }
+}
+
+function contains(a, e) {
+  for (var f = 0; f < a.length; f++) {
+    if (a[f] == e) {
+      return true
+    }
+  }
+  return false
+}
+
+function artikelterkait() {
+  var v = new Array(0);
+  var w = new Array(0);
+  var x = new Array(0);
+  var A = new Array(0);
+  for (var u = 0; u < relurls.length; u++) {
+    if (!contains(v, relurls[u])) {
+      v.length += 1;
+      v[v.length - 1] = relurls[u];
+      w.length += 1;
+      w[w.length - 1] = reljudul[u];
+      x.length += 1;
+      x[x.length - 1] = relcuplikan[u];
+      A.length += 1;
+      A[A.length - 1] = relgambar[u]
+    }
+  }
+  reljudul = w;
+  relurls = v;
+  relcuplikan = x;
+  relgambar = A;
+  for (var u = 0; u < reljudul.length; u++) {
+    var B = Math.floor((reljudul.length - 1) * Math.random());
+    var i = reljudul[u];
+    var s = relurls[u];
+    var y = relcuplikan[u];
+    var C = relgambar[u];
+    reljudul[u] = reljudul[B];
+    relurls[u] = relurls[B];
+    relcuplikan[u] = relcuplikan[B];
+    relgambar[u] = relgambar[B];
+    reljudul[B] = i;
+    relurls[B] = s;
+    relcuplikan[B] = y;
+    relgambar[B] = C
+  }
+  var r = 0;
+  var D = Math.floor((reljudul.length - 1) * Math.random());
+  var z = D;
+  var q;
+  var t = document.URL;
+  while (r < relmaxtampil) {
+    if (relurls[D] != t) {
+      q = "<li class='news-title clearfix'>";
+      q += "<div>";
+      q += "<a href='" + relurls[D] + "' rel='nofollow' target='_top' title='" + reljudul[D] + "'><div class='overlayb'></div>" + r_thumbnail(relgambar[D],relcuplikan[D]) + "</a>";
+      q += "<a class='relinkjdulx' href='" + relurls[D] + "' target='_top'>" + reljudul[D] + "</a>";
+      q += "</div>";
+      q += "</li>";
+      document.write(q);
+      r++;
+      if (r == relmaxtampil) {
+        break
+      }
+    }
+    if (D < reljudul.length - 1) {
+      D++
+    } else {
+      D = 0
+    }
+    if (D == z) {
+      break
+    }
+  }
+};
+
+
 
 
 function hide_download() {
@@ -1344,48 +1490,26 @@ for (var i = 0; i < bubblyButtons.length; i++) {
 </script>
 </b:if>
 
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({
+         google_ad_client: &quot;ca-pub-7811836118065853&quot;,
+         enable_page_level_ads: true
+    });
+</script>
+
 <script type='text/javascript'>
 //<![CDATA[
 function createPostSummary(s,r,m,k){var u,t=document,n=configSummary,i=t.getElementById(s).value,c=t.getElementById(r),g=m,p=k;c.innerHTML=i;var j=c.getElementsByTagName("img");var h=c.getElementsByTagName("iframe");if(j.length===0&&h.length===0){var q=n.BackupImage}else{if(j.length===0&&h.length>0){var l=h[0].src;var o=l.match(/(\?v=|\&v=|\/\d\/|\/embed\/|\/v\/|\.be\/)([a-zA-Z0-9\-\_]+)/);var q="http://img.youtube.com/vi/"+o[2]+"/0.jpg"}else{var q=j[0].src.replace(/\/s[0-9]+(\-c)?\//,"/s"+n.thumbnailSize+"-c/")}}u=i.replace(/<(.*?)>/g,"").replace(/[\n\r]+/g," ");c.innerHTML='<a class="thumbimgx" title="'+g+'" href="'+p+'"><img class="post-thumbnail" src="'+q+'" alt="thumbnail" width="'+n.thumbnailSize+'" height="'+n.thumbnailSize+'"></a><strong><a class="titlex" href="'+p+'">'+g+"</a></strong><p>"+u.substring(0,n.summaryLength)+"&hellip;</p>"};
 //]]>
 </script>
-
 <link href='https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css' rel='stylesheet'/>
 <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js'/>
+<script src='https://unpkg.com/masonry-layout@3.3.2/dist/masonry.pkgd.min.js'/>
 
-<b:if cond='data:blog.pageType == &quot;item&quot;'>
-<script type='text/javascript'>
-    //<![CDATA[
-    $(window).bind("load resize", function(){
-      var url = location.protocol+'//'+location.host+location.pathname;
-      var containercm_width = $('#container-commentfb').width();
-        $('#container-commentfb').html('<div class="fb-comments" ' +
-        'data-href="'+url+'"' +
-        ' width="' + containercm_width + '" data-num-posts="10"></div>');
-        FB.XFBML.parse( );
-    });
-    //]]>
-    </script>
-</b:if>
 </head>
 <body>
 
-<div id='fb-root'/>
-
-    <script>
-      //<![CDATA[
-      window.fbAsyncInit = function() {
-        FB.init({
-          appId            : '192195697962437',
-          autoLogAppEvents : true,
-          xfbml            : true,
-          version          : 'v4.0'
-        });
-      };
-    //]]>
-    </script>
-
-    <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
 
 
 
@@ -1577,7 +1701,29 @@ function createPostSummary(s,r,m,k){var u,t=document,n=configSummary,i=t.getElem
 
 <div id='wrapper'>
 
-<b:section class='banner section' id='banner' maxwidgets='1' showaddelement='yes'/>
+<b:section class='banner section' id='banner' maxwidgets='1' showaddelement='yes'>
+  <b:widget id='HTML566' locked='false' title='HEADER ADS' type='HTML' version='1'>
+    <b:widget-settings>
+      <b:widget-setting name='content'>&lt;!-- HDV HEADER ADS --&gt;
+&lt;ins class=&quot;adsbygoogle&quot;
+     style=&quot;display:block&quot;
+     data-ad-client=&quot;ca-pub-7811836118065853&quot;
+     data-ad-slot=&quot;2032458783&quot;
+     data-ad-format=&quot;auto&quot;
+     data-full-width-responsive=&quot;true&quot;&gt;&lt;/ins&gt;
+&lt;script&gt;
+     (adsbygoogle = window.adsbygoogle || []).push({});
+&lt;/script&gt;</b:widget-setting>
+    </b:widget-settings>
+    <b:includable id='main'>
+<!-- only display title if it's non-empty -->
+<div class='widget-content'>
+  <data:content/>
+</div>
+</b:includable>
+  </b:widget>
+</b:section>
+
 <div class='clear'/>
 
 <div id='sider'>
@@ -1660,7 +1806,7 @@ function createPostSummary(s,r,m,k){var u,t=document,n=configSummary,i=t.getElem
       <b:includable id='backlinkDeleteIcon' var='backlink'>
        <span expr:class='&quot;item-control &quot; + data:backlink.adminClass'>
         <a expr:href='data:backlink.deleteUrl' expr:title='data:top.deleteBacklinkMsg'>
-         <img src='http://www.blogger.com/img/icon_delete13.gif'/>
+         <img src='//www.blogger.com/img/icon_delete13.gif'/>
         </a>
        </span>
       </b:includable>
@@ -1702,7 +1848,7 @@ function createPostSummary(s,r,m,k){var u,t=document,n=configSummary,i=t.getElem
         <b:if cond='data:blog.pageType == &quot;item&quot;'>
         <b:loop values='data:posts' var='post'>
         <b:if cond='data:post.labels'>
-        <div class='breadcrumbs'><span itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='data:blog.homepageUrl' itemprop='url'><span itemprop='title'><i class='fa fa-home fa-lg'/></span></a></span>  <b:loop values='data:post.labels' var='label'><span itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='data:label.url + &quot;?&amp;amp;max-results=9&quot;' itemprop='url'><span itemprop='title'><i class='fa fa-tag'/> <data:label.name/></span></a></span><b:if cond='data:label.isLast != &quot;true&quot;'>  </b:if> </b:loop>  <span><i class='fa fa-picture-o'/> <data:post.title/></span>
+        <div class='breadcrumbs'><span itemscope='' itemtype='//data-vocabulary.org/Breadcrumb'><a expr:href='data:blog.homepageUrl' itemprop='url'><span itemprop='title'><i class='fa fa-home fa-lg'/></span></a></span>  <b:loop values='data:post.labels' var='label'><span itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'><a expr:href='data:label.url + &quot;?&amp;amp;max-results=9&quot;' itemprop='url'><span itemprop='title'><i class='fa fa-tag'/> <data:label.name/></span></a></span><b:if cond='data:label.isLast != &quot;true&quot;'>  </b:if> </b:loop>  <span><i class='fa fa-picture-o'/> <data:post.title/></span>
         </div>
         <b:else/>
         <div class='breadcrumbs'><span><a expr:href='data:blog.homepageUrl' rel='nofollow'><i class='fa fa-home fa-lg'/></a></span>  <span>Uncategories</span>  <span><data:post.title/></span></div>
@@ -1926,19 +2072,16 @@ function createPostSummary(s,r,m,k){var u,t=document,n=configSummary,i=t.getElem
 
         //Pengaturan Emoticon
         Emo_List = [
-        ':)'  ,'http://4.bp.blogspot.com/-J7s7flyAolE/U6tMYuCWJjI/AAAAAAAAD-g/ktLPs0sF0zM/s1600/smile.png',
-        ':('  ,'http://1.bp.blogspot.com/-1BqZVIOmokE/U6tP_zEGUXI/AAAAAAAAD-4/Ykfh8PqPa74/s1600/Frown.png',
-        ' =('  ,'http://2.bp.blogspot.com/-SL2PzXhI6-I/U6tMUbl4uBI/AAAAAAAAD9c/HmgkQTi81jc/s1600/berduka.gif',
-        '^_^'  ,'http://2.bp.blogspot.com/-6JEoWkFJtMU/U6tMYfYjHJI/AAAAAAAAD-U/ggiVnSMQWEc/s1600/sm_smile.gif',
-        ' :D'  ,'http://3.bp.blogspot.com/-alzlBnNEQmI/U6tMWxMCe_I/AAAAAAAAD-E/upslDYz1T3o/s1600/laugh.png',
-        '=D'  ,'http://1.bp.blogspot.com/-iVpfzVgecII/U6tQBGbBVNI/AAAAAAAAD_Q/yM9i3ANzAh4/s1600/Laughing.png',
-        '|o|'  ,'http://1.bp.blogspot.com/-VzxVDD6dmB4/Usv09aIonRI/AAAAAAAAax0/ETH5TeQiIpA/s1600/applause-yahoo-emoticon.gif',
-        '@@,'  ,'http://1.bp.blogspot.com/-nb5zqf7iKBE/U6tMUWl6XcI/AAAAAAAAD9Y/V9qG-QRDslU/s1600/bingung.gif',
-        ' ;)'  ,'http://2.bp.blogspot.com/-EvSfZMZuwKo/U6tMVvRUL1I/AAAAAAAAD9w/1zzRy8EUC5A/s1600/cool.png',
-        ':-d'  ,'http://2.bp.blogspot.com/-yElQmFAIiII/UKhVMcObcQI/AAAAAAAADP4/-qdEpW8zCmY/s1600/thumbsup.gif',
-        ' :p'  ,'http://2.bp.blogspot.com/-Ex1KikUVM2Q/U6tMVfiivCI/AAAAAAAAD9s/dKyvB1R6F8I/s1600/capede.gif',
-        ':ng'  ,'http://4.bp.blogspot.com/-SLdFsLn7w00/U6tMXp7KTGI/AAAAAAAAD-I/MFuTw6CkbfI/s1600/ngakak.gif',
-        ':lv'  ,'http://3.bp.blogspot.com/-KMdDgs2xyr4/U6tMV-juTSI/AAAAAAAAD90/jadn4_Ji8js/s1600/heart.png',
+        ':)'  ,'https://1.bp.blogspot.com/-2fTn11tIeWo/XVeGxnuVUEI/AAAAAAAAH70/KlCV8fY0OM0RU9sKSFP_dMHRt_b8oruPQCLcBGAs/s90/sticker%2B%25287%2529.png',
+        ':('  ,'https://4.bp.blogspot.com/-Q0h5ONNVlWg/XVeGx2VNfWI/AAAAAAAAH74/SScymq-NiIwk1jvPcEPxAfU7AcqJsvAXQCLcBGAs/s90/sticker%2B%25288%2529.png',
+        ' =('  ,'https://1.bp.blogspot.com/-yI7VPhQMjng/XVeGwMHsdOI/AAAAAAAAH7c/1xwgeTgHck8AfeygHfjxhSIiF1FwXXHhACLcBGAs/s90/sticker%2B%25282%2529.png',
+        '^_^'  ,'https://3.bp.blogspot.com/-iDqPv3hqyDk/XVeGyo1MldI/AAAAAAAAH8I/fbN_opGpjOA9EkLg06836waS-ALumoeIgCLcBGAs/s90/sticker_animation%25402x.png',
+        ' :D'  ,'https://3.bp.blogspot.com/-A_HenKlFxzM/XVeGydUCYeI/AAAAAAAAH8E/e_oxPliqChkx-A-ejbc6RLUfBT_yNdTjACLcBGAs/s90/sticker_animation%25402x%2B%25281%2529.png',
+        '@@'  ,'https://3.bp.blogspot.com/-ek0hxQaUcdI/XVeGwBJ12YI/AAAAAAAAH7Y/YwgWPmmpFFM7hu9Py9mw5qFWaV7Bo3LjgCLcBGAs/s90/sticker%2B%25281%2529.png',
+        ' :?'  ,'https://4.bp.blogspot.com/--iEx5VMZp-M/XVeGxb2Iv4I/AAAAAAAAH7w/5-YQ396-gLkoDX0jvMa7VDSYY88u56CJwCLcBGAs/s90/sticker%2B%25286%2529.png',
+        ':zz'  ,'https://2.bp.blogspot.com/-2_8nT8A7MMQ/XVeGxCHqeZI/AAAAAAAAH7o/uMfTWbPR59g0eFjFFLCJWF7VIfnLFjTzgCLcBGAs/s90/sticker%2B%25285%2529.png',
+        ':!!'  ,'https://4.bp.blogspot.com/-kxBwv3flWlM/XVeGyLA1EeI/AAAAAAAAH78/LMIOaNhbx_UMSonwQdQE0ZekBpLkppp-QCLcBGAs/s90/sticker%2B%25289%2529.png',
+        ':~'  ,'https://1.bp.blogspot.com/-4ytM8MZAIuI/XVeGwbBDhfI/AAAAAAAAH7g/MJPZl1lBfDgqDznoG8Ih6VLS1m_AhofJwCLcBGAs/s90/sticker%2B%252810%2529.png'
         ];
 
 
@@ -2371,60 +2514,43 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
 <div class='slide-share'>
 <p>Share</p>
 </div>
-<a class='fb-share-button' name='fb_share' rel='nofollow' share_url='&quot;http://www.facebook.com/sharer.php?u=&quot; + data:blog.url' type='button_count'/>
-</div>
-<div class='facebook button-share'>
-<div class='slide-share'>
-<p>Like</p>
-</div>
-<div class='fb-like' data-action='like' data-layout='button_count' data-share='false' data-show-faces='false'/>
-</div>
-<div class='google button-share'>
-<div class='slide-share'>
-<p>G+</p>
-</div>
-<div class='g-plusone' data-count='true' data-size='medium' expr:data-href='data:post.url' rel='nofollow'/>
-<script type='text/javascript'>
-  window.___gcfg = {lang: &#39;id&#39;};
-
-  (function() {
-    var po = document.createElement(&#39;script&#39;); po.type = &#39;text/javascript&#39;; po.async = true;
-    po.src = &#39;https://apis.google.com/js/plusone.js&#39;;
-    var s = document.getElementsByTagName(&#39;script&#39;)[0]; s.parentNode.insertBefore(po, s);
-  })();
-</script>
-</div>
-<div class='twitter button-share'>
-<div class='slide-share'>
-<p>Tweet</p>
-</div>
-<a class='twitter-share-button' data-count='horizontal' data-related='' data-via='' expr:data-text='data:post.title' expr:data-url='data:post.url' href='http://twitter.com/share' title='Share via Twitter'>Tweet</a>
-<script async='async' src='http://platform.twitter.com/widgets.js' type='text/javascript'/>
+<a class='fb-share-button' name='fb_share' rel='nofollow' expr:href='"http://www.facebook.com/sharer.php?u=" + data:blog.url' type='button_count'>Share</a>
 </div>
 <div class='clear'/>
 </div>
 <div class='clear'/>
-
+<h4>Related Posts</h4>
 <div id='related_posts'>
 <div class='relhead'>
-          <h4>Related Posts</h4>
 <div class='clear'/>
           <b:loop values='data:post.labels' var='label'>
                <script expr:src='&quot;/feeds/posts/default/-/&quot; + data:label.name + &quot;?alt=json-in-script&amp;amp;callback=relpostimgcuplik&amp;amp;max-results=50&quot;' type='text/javascript'/>
           </b:loop>
           <ul id='relpost_img_sum'>
+                <script>
+                //<![CDATA[
+                var $grid =  $('.relhead').masonry({
+                    itemSelector: '.news-title',
+                    isAnimated: true,
+                    gutterWidth: 0,
+                    columnWidth: 0,
+                    animationOptions: {
+                      duration: 950,
+                      easing: 'easeInOutCubic',
+                      queue: false
+                    }
+                  });
+                  function LoadGrid() {
+                    $grid.masonry('reloadItems');
+                    $grid.masonry('layout');
+                  };
+                  //]]>
+                  </script>
                <script type='text/javascript'>artikelterkait();</script>
           </ul>
      </div>
 </div>
 <div style='clear:both;'/>
-
-<b:if cond='data:blog.pageType == &quot;item&quot;'>
-<div id='fb-root'/>
-<script src='http://connect.facebook.net/en_US/all.js#xfbml=1'/>
-<div id='container-commentfb' style='width:100%;margin:10px auto;margin-top:20px;'><fb:comments expr:href='data:post.url' num_posts='10' width='500'/></div>
-</b:if>
-
              <div class='clear'/>
            </div>
 
@@ -2532,60 +2658,57 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
 
 <aside id='side-kanan'>
   <b:section class='sidebar' id='sidebar-kanan'>
-    <b:widget id='PopularPosts1' locked='false' title='Weekly Posts' type='PopularPosts'>
+
+    <b:widget id='HTML2' locked='false' title='Recent' type='HTML' version='1'>
+      <b:widget-settings>
+        <b:widget-setting name='content'>&lt;style scoped=&#39;&#39; type=&#39;text/css&#39;&gt;
+&lt;/style&gt;
+&lt;div id=&quot;slider-rotator&quot; class=&quot;slider-rotator loading&quot;&gt;
+&lt;/div&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;https://unpkg.com/hdv-anivn@2.0.6/feedrotator.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+makeSlider({
+    url: &quot;https://workshop.wallpaperhdv.net&quot;
+});
+&lt;/script&gt;</b:widget-setting>
+      </b:widget-settings>
       <b:includable id='main'>
-<b:if cond='data:blog.pageType == &quot;item&quot;'>
-  <b:if cond='data:title'><h2><data:title/></h2></b:if>
-  <div class='widget-content popular-posts'>
-    <ul>
-      <b:loop values='data:posts' var='post'>
-      <li>
-        <b:if cond='data:showThumbnails == &quot;false&quot;'>
-          <b:if cond='data:showSnippets == &quot;false&quot;'>
-            <!-- (1) No snippet/thumbnail -->
-            <a expr:href='data:post.href' expr:title='data:post.title'><data:post.title/></a>
-          <b:else/>
-            <!-- (2) Show only snippets -->
-            <div class='item-title'><a expr:href='data:post.href' expr:title='data:post.title'><data:post.title/></a></div>
-            <div class='item-snippet'><data:post.snippet/></div>
-          </b:if>
-        <b:else/>
-          <b:if cond='data:showSnippets == &quot;false&quot;'>
-            <!-- (3) Show only thumbnails -->
-            <div class='item-thumbnail-only'>
-              <b:if cond='data:post.thumbnail'>
-                <div class='item-thumbnail'>
-                  <a expr:href='data:post.href' expr:title='data:post.title' target='_blank'>
-                    <img alt='thumbnails' expr:src='data:post.thumbnail' expr:title='data:post.title' style='height=90px;width=90px'/>&#65279;
-                  </a>
-                </div>
-              </b:if>
-              <div class='item-title'><a expr:href='data:post.href' expr:title='data:post.title'><data:post.title/></a></div>
-            </div>
-            <div style='clear: both;'/>
-          <b:else/>
-            <!-- (4) Show snippets and thumbnails -->
-            <div class='item-content'>
-              <b:if cond='data:post.thumbnail'>
-                <div class='item-thumbnail'>
-                  <a expr:href='data:post.href' target='_blank'>
-                    <img expr:alt='data:post.title' expr:height='data:thumbnailSize' expr:src='data:post.thumbnail' expr:title='data:post.title' expr:width='data:thumbnailSize'/>
-                  </a>
-                </div>
-              </b:if>
-              <div class='item-title'><a expr:href='data:post.href' expr:title='data:post.title'><data:post.title/></a></div>
-              <div class='item-snippet'><data:post.snippet/></div>
-            </div>
-            <div style='clear: both;'/>
-          </b:if>
-        </b:if>
-      </li>
-      </b:loop>
-    </ul>
+  <!-- only display title if it's non-empty -->
+  <b:if cond='data:title != &quot;&quot;'>
+    <h2 class='title'><data:title/></h2>
+  </b:if>
+  <div class='widget-content'>
+    <data:content/>
   </div>
-</b:if>
 </b:includable>
     </b:widget>
+
+
+    <b:widget id='HTML567' locked='false' title='ADS' type='HTML' version='1'>
+      <b:widget-settings>
+        <b:widget-setting name='content'>&lt;!-- HDV ADS 1 --&gt;
+&lt;ins class=&quot;adsbygoogle&quot;
+     style=&quot;display:block&quot;
+     data-ad-client=&quot;ca-pub-7811836118065853&quot;
+     data-ad-slot=&quot;2716298144&quot;
+     data-ad-format=&quot;auto&quot;
+     data-full-width-responsive=&quot;true&quot;&gt;&lt;/ins&gt;
+&lt;script&gt;
+     (adsbygoogle = window.adsbygoogle || []).push({});
+&lt;/script&gt;</b:widget-setting>
+      </b:widget-settings>
+      <b:includable id='main'>
+        <b:if cond='data:title != &quot;&quot;'>
+          <h2 class='title'><data:title/></h2>
+        </b:if>
+  <div class='widget-content'>
+    <data:content/>
+  </div>
+</b:includable>
+    </b:widget>
+
+
+
     <b:widget id='Label1' locked='false' title='Label' type='Label'>
       <b:includable id='main'>
   <b:if cond='data:title'>
@@ -2745,7 +2868,28 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
   <div class='clear'/>
   </div>
 
-<b:section class='banner2 section' id='banner2' maxwidgets='1' showaddelement='yes'/>
+<b:section class='banner2 section' id='banner2' maxwidgets='1' showaddelement='yes'>
+  <b:widget id='HTML568' locked='false' title='HEADER ADS' type='HTML' version='1'>
+    <b:widget-settings>
+      <b:widget-setting name='content'>&lt;!-- HDV HEADER ADS --&gt;
+&lt;ins class=&quot;adsbygoogle&quot;
+     style=&quot;display:block&quot;
+     data-ad-client=&quot;ca-pub-7811836118065853&quot;
+     data-ad-slot=&quot;2032458783&quot;
+     data-ad-format=&quot;auto&quot;
+     data-full-width-responsive=&quot;true&quot;&gt;&lt;/ins&gt;
+&lt;script&gt;
+     (adsbygoogle = window.adsbygoogle || []).push({});
+&lt;/script&gt;</b:widget-setting>
+    </b:widget-settings>
+    <b:includable id='main'>
+<!-- only display title if it's non-empty -->
+<div class='widget-content'>
+  <data:content/>
+</div>
+</b:includable>
+  </b:widget>
+</b:section>
 <div class='clear'/>
 
 <footer id='copyright'>
@@ -2807,6 +2951,11 @@ $('#cssmenu > ul > li > a').click(function() {
     return false;
   }
 });
+
+window.onload = function(){
+  LoadGrid();
+}
+
 //]]>
 </script>
 <script type='text/javascript'>
@@ -2819,11 +2968,15 @@ $(function() {
 });
  });
 </script>
+
+
+
+
 <b:if cond='data:blog.pageType != &quot;item&quot;'>
 <b:if cond='data:blog.pageType != &quot;static_page&quot;'>
-<script src="https://unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.min.js"></script>
-<script src='https://unpkg.com/imagesloaded@3.2.0/imagesloaded.pkgd.min.js'/>
 <script src='https://unpkg.com/masonry-layout@3.3.2/dist/masonry.pkgd.min.js'/>
+<script src='https://unpkg.com/imagesloaded@3.2.0/imagesloaded.pkgd.min.js'/>
+<script src="https://unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.min.js"></script>
 <script>
 //<![CDATA[
 
@@ -2845,11 +2998,6 @@ $(function() {
     $grid.masonry('reloadItems');
     $grid.masonry('layout');
   }
-  function isLoadingVideo(x) {
-    console.log('Load Video Grid --->');
-    x.classList.remove('is-loading');
-    LoadGrid();
-  }
 
   $grid.imagesLoaded().progress(function(instance, image) {
     var result = image.isLoaded ? 'loaded' : 'broken';
@@ -2864,11 +3012,7 @@ $(function() {
   })
   .always( function( instance ) {
     console.log('all images loaded');
-    var video_gird = document.getElementsByClassName("video_gird");
-    var i_video_gird;
-    for (i_video_gird = 0; i_video_gird < video_gird.length; i_video_gird++) {
-      video_gird[i_video_gird].oncanplay = isLoadingVideo(video_gird[i_video_gird]);
-    }
+    LoadGrid();
   });
 
 

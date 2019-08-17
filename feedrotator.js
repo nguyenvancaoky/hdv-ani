@@ -163,9 +163,20 @@
   }
 })(jQuery);
 
+function bp_thumbnail(image_url,q)
+{
+if (image_url.includes('steamuserimages')) {
+  image_tag= '<img alt="' + q + '" src="' + image_url.replace('mw=640','mw=280') + '">';
+} else {
+  image_tag= '<video class="is-loading video_gird" preload="auto" alt="'+q+'" autoplay loop muted playsinline><source src="'+image_url+'" type="video/mp4"></video>';
+}
+return image_tag;
+}
+
+
 function makeSlider(a) {
   var c = {
-    url: "https://wallpapershdv.blogspot.com",
+    url: "https://workshop.wallpaperhdv.net",
     numPost: 5,
     newTabLink: false,
     labelName: null,
@@ -175,7 +186,7 @@ function makeSlider(a) {
     showThumb: true,
     thumbWidth: 250,
     squareThumb: true,
-    noThumb: "http://3.bp.blogspot.com/-vpCFysMEZys/UOEhSGjkfnI/AAAAAAAAFwY/h1wuA5kfEhg/s72-c/grey.png",
+    noThumb: "https://3.bp.blogspot.com/-vpCFysMEZys/UOEhSGjkfnI/AAAAAAAAFwY/h1wuA5kfEhg/s72-c/grey.png",
     showNav: true,
     navText: {
       prev: "&lt;",
@@ -186,7 +197,7 @@ function makeSlider(a) {
     speed: 1000,
     hoverPause: true,
     crossFade: false,
-    autoHeight: false,
+    autoHeight: true,
     autoSlide: true,
     onInit: function() {},
     onHide: function(d) {},
@@ -205,7 +216,7 @@ function makeSlider(a) {
           break
         }
         q = r[m].title.$t;
-        e = ("media$thumbnail" in r[m]) ? '<img alt="' + q + '" src="' + r[m].media$thumbnail.url.replace(/\/s72\-c/, "/s" + c.thumbWidth + (c.squareThumb ? "-c" : "")) + '" style="width:' + c.thumbWidth + "px;height:" + (c.squareThumb ? c.thumbWidth + "px" : "auto") + '">' : '<img src="' + c.noThumb + '" style="width:' + c.thumbWidth + "px;height:" + (c.squareThumb ? c.thumbWidth + "px" : "auto") + '">';
+        e = bp_thumbnail(r[m].link[0].href,q);
         o = ("summary" in r[m] && c.summaryLength > 0) ? r[m].summary.$t.replace(/<br ?\/?>/ig, " ").replace(/<(.*?)>/g, "").replace(/[<>]/g, "") : "";
         o = (c.summaryLength < o.length) ? o.substring(0, c.summaryLength) + "&hellip;" : o;
         for (var l = 0, f = r[m].link.length; l < f; l++) {
@@ -213,11 +224,11 @@ function makeSlider(a) {
         }
         h += '<div class="slider-item">';
         h += (c.showThumb && c.showDetail) ? '<div class="image-wrapper"><a href="' + p + '" title="' + q + '"' + (c.newTabLink ? ' target="_blank"' : "") + ">" + e + "</a></div>" : (c.showThumb && !c.showDetail) ? '<div class="image-wrapper"><a href="' + p + '" title="' + q + '"' + (c.newTabLink ? ' target="_blank"' : "") + ">" + e + "</a></div>" : "";
-        h += (c.showDetail) ? '<div class="detail-wrapper"><h4><a title="' + q + '" href="' + p + '"' + (c.newTabLink ? ' target="_blank"' : "") + ">" + ((c.titleLength == "auto") ? q : q.substring(0, c.titleLength) + (q.length > c.titleLength ? "&hellip;" : "")) + "</a></h4><p>" + o + "</p></div>" : "";
+        h += (c.showDetail) ? '<div class="detail-wrapper"><h4><a title="' + q + '" href="' + p + '"' + (c.newTabLink ? ' target="_blank"' : "") + ">" + ((c.titleLength == "auto") ? q : q.substring(0, c.titleLength) + (q.length > c.titleLength ? "&hellip;" : "")) + "</a></h4></div>" : "";
         h += "</div>";
         $("#" + c.containerId).css({
           width: (c.showThumb) ? c.thumbWidth + "px" : $("#" + c.containerId).css("width"),
-          height: (!c.showDetail && c.squareThumb) ? c.thumbWidth + "px" : $("#" + c.containerId).css("height")
+          height: "250px"
         })
       }
       d = '<div class="slider-rotator-nav"' + (c.showNav === false ? ' style="display:none;"' : "") + ">";

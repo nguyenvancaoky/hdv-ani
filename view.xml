@@ -2149,10 +2149,10 @@ function artikelterkait() {
 &lt;/style&gt;
 &lt;div id=&quot;slider-rotator&quot; class=&quot;slider-rotator loading&quot;&gt;
 &lt;/div&gt;
-&lt;script type=&quot;text/javascript&quot; src=&quot;https://cdn.jsdelivr.net/npm/hdv-anivn/feedrotator.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;https://unpkg.com/hdv-anivn@1.0.8/feedrotator.js&quot;&gt;&lt;/script&gt;
 &lt;script type=&quot;text/javascript&quot;&gt;
 makeSlider({
-    url: &quot;https://wallpapershdv.blogspot.com&quot; // Change to your blog URL
+    url: &quot;https://wallpaperengineworkshops.blogspot.com&quot;
 });
 &lt;/script&gt;</b:widget-setting>
       </b:widget-settings>
