@@ -2081,38 +2081,35 @@ user is not using shrink to fit then we expand the header.
      }
 
      function totalcountdata(e) {
-         var a = e.feed,
-             t = parseInt(a.openSearch$totalResults.$t, 10);
-         looppagecurrentg(t)
+       var a = e.feed;
+       looppagecurrentg(parseInt(a.openSearch$totalResults.$t, 10))
      }
 
      function pagecurrentg() {
-         var e = urlactivepage; - 1 != e.indexOf("/search/label/") && (postLabel = -1 != e.indexOf("?updated-max") ? e.substring(e.indexOf("/search/label/") + 14, e.indexOf("?updated-max")) : e.substring(e.indexOf("/search/label/") + 14, e.indexOf("?&max"))), -1 == e.indexOf(".html") && (-1 == e.indexOf("/search/label/") ? (currentPage = "page", currentPageNo = -1 != urlactivepage.indexOf("#PageNo=") ? urlactivepage.substring(urlactivepage.indexOf("#PageNo=") + 8, urlactivepage.length) : 1, -1 == e.indexOf("q=") ? document.write('<script src="' + home_page + 'feeds/posts/summary?max-results=1&alt=json-in-script&callback=totalcountdata"></script>') : document.write('<script src="' + home_page + "feeds/posts/summary?q=" + e.split("?")[1].split("q=")[1].split("&")[0] + '&alt=json-in-script&callback=totalcountdata"></script>')) : (currentPage = "label", -1 == e.indexOf("&max-results=") && (perPage = 20), currentPageNo = -1 != urlactivepage.indexOf("#PageNo=") ? urlactivepage.substring(urlactivepage.indexOf("#PageNo=") + 8, urlactivepage.length) : 1, document.write('<script src="' + home_page + "feeds/posts/summary/-/" + postLabel + '?alt=json-in-script&callback=totalcountdata&max-results=1" ></script>')))
+       var e = urlactivepage; - 1 != e.indexOf("/search/label/") && (-1 != e.indexOf("?updated-max") ? postLabel = e.substring(e.indexOf("/search/label/") + 14, e.indexOf("?updated-max")) : postLabel = e.substring(e.indexOf("/search/label/") + 14, e.indexOf("?&max"))), -1 == e.indexOf("?q=") && -1 == e.indexOf(".html") && (-1 == e.indexOf("/search/label/") ? (currentPage = "page", -1 != urlactivepage.indexOf("#PageNo=") ? currentPageNo = urlactivepage.substring(urlactivepage.indexOf("#PageNo=") + 8, urlactivepage.length) : currentPageNo = 1, document.write('<script src="' + home_page + 'feeds/posts/summary?max-results=1&alt=json-in-script&callback=totalcountdata"><\/script>')) : (currentPage = "label", -1 == e.indexOf("&max-results=") && (perPage = 20), -1 != urlactivepage.indexOf("#PageNo=") ? currentPageNo = urlactivepage.substring(urlactivepage.indexOf("#PageNo=") + 8, urlactivepage.length) : currentPageNo = 1, document.write('<script src="' + home_page + "feeds/posts/summary/-/" + postLabel + '?alt=json-in-script&callback=totalcountdata&max-results=1" ><\/script>')));
      }
 
      function redirectpage(e) {
-         jsonstart = (e - 1) * perPage, noPage = e;
-         var a = document.getElementsByTagName("head")[0],
-             t = document.createElement("script");
-         t.type = "text/javascript", -1 == urlactivepage.indexOf("?q=") ? t.setAttribute("src", home_page + "feeds/posts/summary?start-index=" + jsonstart + "&max-results=1&alt=json-in-script&callback=finddatepost") : t.setAttribute("src", home_page + "feeds/posts/summary?start-index=" + jsonstart + "&alt=json-in-script&q=" + urlactivepage.split("?")[1].split("q=")[1].split("&")[0] + "&callback=finddatepost"), a.appendChild(t)
+       jsonstart = (e - 1) * perPage, noPage = e;
+       var a = document.getElementsByTagName("head")[0],
+         s = document.createElement("script");
+       s.type = "text/javascript", s.setAttribute("src", home_page + "feeds/posts/summary?start-index=" + jsonstart + "&max-results=1&alt=json-in-script&callback=finddatepost"), a.appendChild(s)
      }
 
      function redirectlabel(e) {
-         jsonstart = (e - 1) * perPage, noPage = e;
-         var a = document.getElementsByTagName("head")[0],
-             t = document.createElement("script");
-         t.type = "text/javascript", t.setAttribute("src", home_page + "feeds/posts/summary/-/" + postLabel + "?start-index=" + jsonstart + "&max-results=1&alt=json-in-script&callback=finddatepost"), a.appendChild(t)
+       jsonstart = (e - 1) * perPage, noPage = e;
+       var a = document.getElementsByTagName("head")[0],
+         s = document.createElement("script");
+       s.type = "text/javascript", s.setAttribute("src", home_page + "feeds/posts/summary/-/" + postLabel + "?start-index=" + jsonstart + "&max-results=1&alt=json-in-script&callback=finddatepost"), a.appendChild(s)
      }
 
      function finddatepost(e) {
-         post = e.feed.entry[0];
-         var a = post.published.$t.substring(0, 19) + post.published.$t.substring(23, 29),
-             t = encodeURIComponent(a);
-         if ("page" == currentPage)
-             if (-1 == urlactivepage.indexOf("?q=")) var s = "/search?updated-max=" + t + "&max-results=" + perPage + "#PageNo=" + noPage;
-             else var s = "/search?updated-max=" + t + "&q=" + urlactivepage.split("?")[1].split("q=")[1].split("&")[0] + "&max-results=" + perPage + "#PageNo=" + noPage;
-         else var s = "/search/label/" + postLabel + "?updated-max=" + t + "&max-results=" + perPage + "#PageNo=" + noPage;
-         location.href = s
+       post = e.feed.entry[0];
+       var a = post.published.$t.substring(0, 19) + post.published.$t.substring(23, 29),
+         s = encodeURIComponent(a);
+       if ("page" == currentPage) var t = "/search?updated-max=" + s + "&max-results=" + perPage + "#PageNo=" + noPage;
+       else t = "/search/label/" + postLabel + "?updated-max=" + s + "&max-results=" + perPage + "#PageNo=" + noPage;
+       location.href = t
      }    /*]]>*/
     </script>
 
