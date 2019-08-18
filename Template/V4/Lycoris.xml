@@ -652,7 +652,7 @@ user is not using shrink to fit then we expand the header.
                               </span>
                               <b:loop values='data:post.labels' var='label'>
                                 <span itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'>
-                                  <a expr:href='data:label.url + &quot;?&amp;amp;max-results=9&quot;' itemprop='url'>
+                                  <a expr:href='data:label.url + &quot;?&amp;amp;max-results=21&quot;' itemprop='url'>
                                     <span itemprop='title'>
                                       <i class='fa fa-tag'/>
                                       <data:label.name/>
@@ -1357,28 +1357,28 @@ user is not using shrink to fit then we expand the header.
                             <span class='label-info'>
                               <b:loop values='data:post.labels' var='label'>
                                 <b:if cond='data:label.name == &quot;Video&quot;'>
-                                  <a expr:href='data:label.url + &quot;?max-results=9&quot;' rel='tag'>
+                                  <a expr:href='data:label.url + &quot;?&amp;max-results=21&quot;' rel='tag'>
                                     <i class='fa fa-tag'/>
                                     <data:label.name/>
                                   </a>
                                   <b:if cond='data:label.isLast != &quot;true&quot;'/>
                                   <b:else/>
                                   <b:if cond='data:label.name == &quot;Scene&quot;'>
-                                    <a expr:href='data:label.url + &quot;?max-results=9&quot;' rel='tag'>
+                                    <a expr:href='data:label.url + &quot;?&amp;max-results=21&quot;' rel='tag'>
                                       <i class='fa fa-tag'/>
                                       <data:label.name/>
                                     </a>
                                     <b:if cond='data:label.isLast != &quot;true&quot;'/>
                                     <b:else/>
                                     <b:if cond='data:label.name == &quot;Application&quot;'>
-                                      <a expr:href='data:label.url + &quot;?max-results=9&quot;' rel='tag'>
+                                      <a expr:href='data:label.url + &quot;?&amp;max-results=21&quot;' rel='tag'>
                                         <i class='fa fa-tag'/>
                                         <data:label.name/>
                                       </a>
                                       <b:if cond='data:label.isLast != &quot;true&quot;'/>
                                       <b:else/>
                                       <b:if cond='data:label.name == &quot;Web&quot;'>
-                                        <a expr:href='data:label.url + &quot;?max-results=9&quot;' rel='tag'>
+                                        <a expr:href='data:label.url + &quot;?&amp;max-results=21&quot;' rel='tag'>
                                           <i class='fa fa-tag'/>
                                           <data:label.name/>
                                         </a>
@@ -1438,17 +1438,17 @@ user is not using shrink to fit then we expand the header.
                             <div class='post-body entry-content' expr:id='&quot;post-body-&quot; + data:post.id'>
                               <div expr:id='&quot;summary&quot; + data:post.id' itemprop='articleBody'>
                                 <b:loop values='data:post.labels' var='label'>
-                                  <b:if cond='data:label.name == &quot;Video&quot;'>
+                                  <b:if cond='data:label.name == &quot;HDV1&quot;'>
                                     <b:else/>
-                                    <b:if cond='data:label.name == &quot;Scene&quot;'>
+                                    <b:if cond='data:label.name == &quot;HDV2&quot;'>
                                       <b:else/>
-                                      <b:if cond='data:label.name == &quot;Application&quot;'>
+                                      <b:if cond='data:label.name == &quot;HDV3&quot;'>
                                         <b:else/>
-                                        <b:if cond='data:label.name == &quot;Web&quot;'>
+                                        <b:if cond='data:label.name == &quot;HDV4&quot;'>
                                           <b:else/>
                                           <b:if cond='data:label.name == &quot;Wallpaper&quot;'>
                                             <b:else/>
-                                            <a expr:href='data:label.url + &quot;?max-results=9&quot;' rel='tag'>
+                                            <a expr:href='data:label.url + &quot;?&amp;max-results=21&quot;' rel='tag'>
                                               <i class='fa fa-tag'/>
                                               <data:label.name/>
                                             </a>
@@ -1499,7 +1499,7 @@ user is not using shrink to fit then we expand the header.
                                   <b:if cond='data:post.labels'>
                                     <div class='post-info-icon label'>
                                       <b:loop values='data:post.labels' var='label'>
-                                        <a expr:href='data:label.url + &quot;?max-results=9&quot;' rel='tag nofollow'>
+                                        <a expr:href='data:label.url + &quot;?&amp;max-results=21&quot;' rel='tag nofollow'>
                                           <data:label.name/>
                                         </a>
                                         <b:if cond='data:label.isLast != &quot;true&quot;'>
@@ -1532,6 +1532,15 @@ user is not using shrink to fit then we expand the header.
                               </div>
                               <div class='clear'/>
                             </div>
+                            <script>
+                              $(&quot;#collapseOne a&quot;).each(function() {
+                                var id = $(this).attr(&quot;href&quot;);
+                                if (id.includes(&quot;/search/label/&quot;)) {
+                                  id += &quot;?&amp;max-results=21&quot;;
+                                }
+                                $(this).attr(&quot;href&quot;, id);
+                              });
+                            </script>
                             <div class='clear'/>
                             <h4>
                               Related Posts
@@ -1800,7 +1809,7 @@ user is not using shrink to fit then we expand the header.
                               <data:label.name/>
                             </span>
                             <b:else/>
-                            <a expr:dir='data:blog.languageDirection' expr:href='data:label.url'>
+                            <a expr:dir='data:blog.languageDirection' expr:href='data:label.url + &quot;?&amp;max-results=21&quot;'>
                               <data:label.name/>
                             </a>
                           </b:if>

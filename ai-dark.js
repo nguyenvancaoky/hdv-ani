@@ -50,7 +50,7 @@ visibility: visible !important;
             .replace('url("','')
             .replace('")','');
 
-            const btn = '<div class="workshopItemSubscriptionControls aspectratio_square hdv" style="top: 8px;"><a href="" class="general_btn subscribe "><div class="subscribeIcon"></div></a></div>';
+            const btn = '<div class="workshopItemSubscriptionControls aspectratio_square hdv" style="top: 8px;"><a target="_blank" href="" class="general_btn subscribe "><div class="subscribeIcon"></div></a></div>';
           '
 
             image.appendChild(btn);
