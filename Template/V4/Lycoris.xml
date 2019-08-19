@@ -1084,7 +1084,7 @@ user is not using shrink to fit then we expand the header.
                   <b:include name='mobile-nextprev'/>
                 </b:includable>
                 <b:includable id='mobile-nextprev'>
-                  <div class='pagenav' id='blog-navi'>
+                  <div class='pagenav blog-pager container' id='blog-pager'>
                     <b:if cond='data:newerPageUrl'>
                       <div class='mobile-link-button' id='blog-pager-newer-link'>
                         <a class='blog-pager-newer-link' expr:href='data:newerPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-newer-link&quot;' expr:title='data:newerPageTitle'>
@@ -1235,7 +1235,7 @@ user is not using shrink to fit then we expand the header.
                   </div>
                 </b:includable>
                 <b:includable id='nextprev'>
-                  <div class='pagenav' id='blog-navi'>
+                  <div class='pagenav blog-pager container' id='blog-pager'>
                     <b:if cond='data:newerPageUrl'>
                       <span id='blog-pager-newer-link'>
                         <a class='blog-pager-newer-link' expr:href='data:newerPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-newer-link&quot;' expr:title='data:newerPageTitle'>
@@ -1272,7 +1272,7 @@ user is not using shrink to fit then we expand the header.
                   <div class='clear'/>
                 </b:includable>
                 <b:includable id='page-navi'>
-                  <div class='pagenav' id='blog-navi'>
+                  <div class='pagenav blog-pager container' id='blog-pager'>
                     <b:if cond='data:newerPageUrl'>
                       <span id='blog-pager-newer-link'>
                       <a class='blog-pager-newer-link' expr:href='data:newerPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-newer-link&quot;' expr:title='data:newerPageTitle'><data:newerPageTitle/></a>
@@ -2056,8 +2056,72 @@ user is not using shrink to fit then we expand the header.
         var home_page="/";
       /*]]>*/
     </script>
+
     <script async='async' type='text/javascript'>
-     /*<![CDATA[*/
+      /*<![CDATA[*/
+      function looppagecurrentg(e) {
+          console.log('looppagecurrentg');
+          var a = "";
+          pageNumber = parseInt(numPages / 2), pageNumber == numPages - pageNumber && (numPages = 2 * pageNumber + 1), pageStart = currentPageNo - pageNumber, pageStart < 1 && (pageStart = 1), lastPageNo = parseInt(e / perPage) + 1, lastPageNo - 1 == e / perPage && (lastPageNo -= 1), pageEnd = pageStart + numPages - 1, pageEnd > lastPageNo && (pageEnd = lastPageNo), a += "<span class='showpageOf'>Trang " + currentPageNo + "/" + lastPageNo + "</span>";
+          var t = parseInt(currentPageNo) - 1;
+          currentPageNo > 1 && (a += "page" == currentPage ? '<span class="showpage firstpage"><a href="' + home_page + '">' + firstText + "</a></span>" : '<span class="displaypageNum firstpage"><a href="/search/label/' + postLabel + "?&max-results=" + perPage + '">' + firstText + "</a></span>"), currentPageNo > 2 && (a += 3 == currentPageNo ? "page" == currentPage ? '<span class="showpage"><a href="' + home_page + '">' + prevText + "</a></span>" : '<span class="displaypageNum"><a href="/search/label/' + postLabel + "?&max-results=" + perPage + '">' + prevText + "</a></span>" : "page" == currentPage ? '<span class="displaypageNum"><a href="#" onclick="redirectpage(' + t + ');return false">' + prevText + "</a></span>" : '<span class="displaypageNum"><a href="#" onclick="redirectlabel(' + t + ');return false">' + prevText + "</a></span>"), pageStart > 1 && (a += "page" == currentPage ? '<span class="displaypageNum"><a href="' + home_page + '">1</a></span>' : '<span class="displaypageNum"><a href="/search/label/' + postLabel + "?&max-results=" + perPage + '">1</a></span>'), pageStart > 2 && (a += " ... ");
+          for (var s = pageStart; s <= pageEnd; s++) a += currentPageNo == s ? '<span class="pagecurrent">' + s + "</span>" : 1 == s ? "page" == currentPage ? '<span class="displaypageNum"><a href="' + home_page + '">1</a></span>' : '<span class="displaypageNum"><a href="/search/label/' + postLabel + "?&max-results=" + perPage + '">1</a></span>' : "page" == currentPage ? '<span class="displaypageNum"><a href="#" onclick="redirectpage(' + s + ');return false">' + s + "</a></span>" : '<span class="displaypageNum"><a href="#" onclick="redirectlabel(' + s + ');return false">' + s + "</a></span>";
+          pageEnd < lastPageNo - 1 && (a += "...  "), pageEnd < lastPageNo && (a += "page" == currentPage ? '<span class="displaypageNum"><a href="#" onclick="redirectpage(' + lastPageNo + ');return false">' + lastPageNo + "</a></span>" : '<span class="displaypageNum"><a href="#" onclick="redirectlabel(' + lastPageNo + ');return false">' + lastPageNo + "</a></span>");
+          var r = parseInt(currentPageNo) + 1;
+          currentPageNo < lastPageNo - 1 && (a += "page" == currentPage ? '<span class="displaypageNum"><a href="#" onclick="redirectpage(' + r + ');return false">' + nextText + "</a></span>" : '<span class="displaypageNum"><a href="#" onclick="redirectlabel(' + r + ');return false">' + nextText + "</a></span>"), currentPageNo < lastPageNo && (a += "page" == currentPage ? '<span class="displaypageNum lastpage"><a href="#" onclick="redirectpage(' + lastPageNo + ');return false">' + lastText + "</a></span>" : '<span class="displaypageNum lastpage"><a href="#" onclick="redirectlabel(' + lastPageNo + ');return false">' + lastText + "</a></span>");
+          for (var p = document.getElementsByName("pageArea"), n = document.getElementById("blog-pager"), l = 0; l < p.length; l++) p[l].innerHTML = a;
+          p && p.length > 0 && (a = ""), n && (n.innerHTML = a)
+      }
+
+      function totalcountdata(e) {
+          var a = e.feed
+              , t = parseInt(a.openSearch$totalResults.$t, 10);
+          looppagecurrentg(t)
+      }
+
+      function redirectpage(e) {
+          jsonstart = (e - 1) * perPage, noPage = e;
+          var a = document.getElementsByTagName("head")[0]
+              , t = document.createElement("script");
+          t.type = "text/javascript", -1 == urlactivepage.indexOf("?q=") ? t.setAttribute("src", home_page + "feeds/posts/summary?start-index=" + jsonstart + "&max-results=1&alt=json-in-script&callback=finddatepost") : t.setAttribute("src", home_page + "feeds/posts/summary?start-index=" + jsonstart + "&alt=json-in-script&q=" + urlactivepage.split("?")[1].split("q=")[1].split("&")[0] + "&callback=finddatepost"), a.appendChild(t)
+      }
+
+      function pagecurrentg() {
+          var e = urlactivepage; - 1 != e.indexOf("/search/label/") && (postLabel
+           = -1 != e.indexOf("?updated-max") ? e.substring(e.indexOf("/search/label/") +
+            14, e.indexOf("?updated-max")) : e.substring(e.indexOf("/search/label/") +
+            14, e.indexOf("?&max"))), -1 == e.indexOf(".html") && (-1 == e.indexOf("/search/label/") ?
+             (currentPage = "page", currentPageNo = -1 != urlactivepage.indexOf("#PageNo=") ?
+              urlactivepage.substring(urlactivepage.indexOf("#PageNo=") + 8, urlactivepage.length) :
+               1, -1 == e.indexOf("q=") ? document.write('<script src="' +
+                home_page + 'feeds/posts/summary?max-results=1&alt=json-in-script&callback=totalcountdata">'+'</scr'+'ipt>') :
+                 document.write('<script src="' + home_page + "feeds/posts/summary?q=" +
+                  e.split("?")[1].split("q=")[1].split("&")[0] +
+                  '&alt=json-in-script&callback=totalcountdata">'+'</scr'+'ipt>')) :
+                   (currentPage = "label", -1 == e.indexOf("&max-results=") &&
+                    (perPage = 20), currentPageNo = -1 != urlactivepage.indexOf("#PageNo=") ?
+                     urlactivepage.substring(urlactivepage.indexOf("#PageNo=") + 8, urlactivepage.length) :
+                      1, document.write('<script src="' + home_page + "feeds/posts/summary/-/" + postLabel +
+                       '?alt=json-in-script&callback=totalcountdata&max-results=1" >'+'</scr'+'ipt>')))
+      }
+
+      function redirectlabel(e) {
+          jsonstart = (e - 1) * perPage, noPage = e;
+          var a = document.getElementsByTagName("head")[0]
+              , t = document.createElement("script");
+          t.type = "text/javascript", t.setAttribute("src", home_page + "feeds/posts/summary/-/" + postLabel + "?start-index=" + jsonstart + "&max-results=1&alt=json-in-script&callback=finddatepost"), a.appendChild(t)
+      }
+
+      function finddatepost(e) {
+          post = e.feed.entry[0];
+          var a = post.published.$t.substring(0, 19) + post.published.$t.substring(23, 29)
+              , t = encodeURIComponent(a);
+          if ("page" == currentPage)
+              if (-1 == urlactivepage.indexOf("?q=")) var s = "/search?updated-max=" + t + "&max-results=" + perPage + "#PageNo=" + noPage;
+              else var s = "/search?updated-max=" + t + "&q=" + urlactivepage.split("?")[1].split("q=")[1].split("&")[0] + "&max-results=" + perPage + "#PageNo=" + noPage;
+          else var s = "/search/label/" + postLabel + "?updated-max=" + t + "&max-results=" + perPage + "#PageNo=" + noPage;
+          location.href = s
+      }
       if (typeof firstText == "undefined") firstText = "First";
       if (typeof lastText == "undefined") lastText = "Last";
       var noPage;
@@ -2066,51 +2130,7 @@ user is not using shrink to fit then we expand the header.
       var postLabel;
       var perPage = 21;
       pagecurrentg();
-
-     function looppagecurrentg(e) {
-       var a = "";
-       pageNumber = parseInt(numPages / 2), pageNumber == numPages - pageNumber && (numPages = 2 * pageNumber + 1), pageStart = currentPageNo - pageNumber, pageStart < 1 && (pageStart = 1), lastPageNo = parseInt(e / perPage) + 1, lastPageNo - 1 == e / perPage && (lastPageNo -= 1), pageEnd = pageStart + numPages - 1, pageEnd > lastPageNo && (pageEnd = lastPageNo), a += "<span class='pages'>Page " + currentPageNo + " of " + lastPageNo + "</span>";
-       var s = parseInt(currentPageNo) - 1;
-       currentPageNo > 1 && ("page" == currentPage ? a += '<a href="' + home_page + '">' + firstText + "</a>" : a += '<a href="/search/label/' + postLabel + "?&max-results=" + perPage + '">' + firstText + "</a>"), currentPageNo > 2 && (3 == currentPageNo ? "page" == currentPage ? a += '<a href="' + home_page + '">' + prevText + "</a>" : a += '<a href="/search/label/' + postLabel + "?&max-results=" + perPage + '">' + prevText + "</a>" : "page" == currentPage ? a += '<a href="#" onclick="redirectpage(' + s + ');return false">' + prevText + "</a>" : a += '<a href="#" onclick="redirectlabel(' + s + ');return false">' + prevText + "</a>"), pageStart > 1 && ("page" == currentPage ? a += '<a href="' + home_page + '">1</a>' : a += '<a href="/search/label/' + postLabel + "?&max-results=" + perPage + '">1</a>'), pageStart > 2 && (a += " ... ");
-       for (var t = pageStart; t <= pageEnd; t++) currentPageNo == t ? a += '<span class="current">' + t + "</span>" : 1 == t ? "page" == currentPage ? a += '<a href="' + home_page + '">1</a>' : a += '<a href="/search/label/' + postLabel + "?&max-results=" + perPage + '">1</a>' : "page" == currentPage ? a += '<a href="#" onclick="redirectpage(' + t + ');return false">' + t + "</a>" : a += '<a href="#" onclick="redirectlabel(' + t + ');return false">' + t + "</a>";
-       pageEnd < lastPageNo - 1 && (a += "..."), pageEnd < lastPageNo && ("page" == currentPage ? a += '<a href="#" onclick="redirectpage(' + lastPageNo + ');return false">' + lastPageNo + "</a>" : a += '<a href="#" onclick="redirectlabel(' + lastPageNo + ');return false">' + lastPageNo + "</a>");
-       var r = parseInt(currentPageNo) + 1;
-       currentPageNo < lastPageNo - 1 && ("page" == currentPage ? a += '<a href="#" onclick="redirectpage(' + r + ');return false">' + nextText + "</a>" : a += '<a href="#" onclick="redirectlabel(' + r + ');return false">' + nextText + "</a>"), currentPageNo < lastPageNo && ("page" == currentPage ? a += '<a href="#" onclick="redirectpage(' + lastPageNo + ');return false">' + lastText + "</a>" : a += '<a href="#" onclick="redirectlabel(' + lastPageNo + ');return false">' + lastText + "</a>");
-       for (var p = document.getElementsByName("pageArea"), n = document.getElementById("blog-navi"), l = 0; l < p.length; l++) p[l].innerHTML = a;
-       p && p.length > 0 && (a = ""), n && (n.innerHTML = a)
-     }
-
-     function totalcountdata(e) {
-       var a = e.feed;
-       looppagecurrentg(parseInt(a.openSearch$totalResults.$t, 10))
-     }
-
-     function pagecurrentg() {
-       var e = urlactivepage; - 1 != e.indexOf("/search/label/") && (-1 != e.indexOf("?updated-max") ? postLabel = e.substring(e.indexOf("/search/label/") + 14, e.indexOf("?updated-max")) : postLabel = e.substring(e.indexOf("/search/label/") + 14, e.indexOf("?&max"))), -1 == e.indexOf("?q=") && -1 == e.indexOf(".html") && (-1 == e.indexOf("/search/label/") ? (currentPage = "page", -1 != urlactivepage.indexOf("#PageNo=") ? currentPageNo = urlactivepage.substring(urlactivepage.indexOf("#PageNo=") + 8, urlactivepage.length) : currentPageNo = 1, document.write('<script src="' + home_page + 'feeds/posts/summary?max-results=1&alt=json-in-script&callback=totalcountdata"><\/script>')) : (currentPage = "label", -1 == e.indexOf("&max-results=") && (perPage = 20), -1 != urlactivepage.indexOf("#PageNo=") ? currentPageNo = urlactivepage.substring(urlactivepage.indexOf("#PageNo=") + 8, urlactivepage.length) : currentPageNo = 1, document.write('<script src="' + home_page + "feeds/posts/summary/-/" + postLabel + '?alt=json-in-script&callback=totalcountdata&max-results=1" ><\/script>')));
-     }
-
-     function redirectpage(e) {
-       jsonstart = (e - 1) * perPage, noPage = e;
-       var a = document.getElementsByTagName("head")[0],
-         s = document.createElement("script");
-       s.type = "text/javascript", s.setAttribute("src", home_page + "feeds/posts/summary?start-index=" + jsonstart + "&max-results=1&alt=json-in-script&callback=finddatepost"), a.appendChild(s)
-     }
-
-     function redirectlabel(e) {
-       jsonstart = (e - 1) * perPage, noPage = e;
-       var a = document.getElementsByTagName("head")[0],
-         s = document.createElement("script");
-       s.type = "text/javascript", s.setAttribute("src", home_page + "feeds/posts/summary/-/" + postLabel + "?start-index=" + jsonstart + "&max-results=1&alt=json-in-script&callback=finddatepost"), a.appendChild(s)
-     }
-
-     function finddatepost(e) {
-       post = e.feed.entry[0];
-       var a = post.published.$t.substring(0, 19) + post.published.$t.substring(23, 29),
-         s = encodeURIComponent(a);
-       if ("page" == currentPage) var t = "/search?updated-max=" + s + "&max-results=" + perPage + "#PageNo=" + noPage;
-       else t = "/search/label/" + postLabel + "?updated-max=" + s + "&max-results=" + perPage + "#PageNo=" + noPage;
-       location.href = t
-     }    /*]]>*/
+      /*]]>*/
     </script>
 
 

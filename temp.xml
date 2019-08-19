@@ -2078,11 +2078,6 @@ user is not using shrink to fit then we expand the header.
 
      function pagecurrentg() {
        var e = urlactivepage; - 1 != e.indexOf("/search/label/") && (-1 != e.indexOf("?updated-max") ? postLabel = e.substring(e.indexOf("/search/label/") + 14, e.indexOf("?updated-max")) : postLabel = e.substring(e.indexOf("/search/label/") + 14, e.indexOf("?&max"))), -1 == e.indexOf("?q=") && -1 == e.indexOf(".html") && (-1 == e.indexOf("/search/label/") ? (currentPage = "page", -1 != urlactivepage.indexOf("#PageNo=") ? currentPageNo = urlactivepage.substring(urlactivepage.indexOf("#PageNo=") + 8, urlactivepage.length) : currentPageNo = 1, document.write('<script src="' + home_page + 'feeds/posts/summary?max-results=1&alt=json-in-script&callback=totalcountdata"><\/script>')) : (currentPage = "label", -1 == e.indexOf("&max-results=") && (perPage = 20), -1 != urlactivepage.indexOf("#PageNo=") ? currentPageNo = urlactivepage.substring(urlactivepage.indexOf("#PageNo=") + 8, urlactivepage.length) : currentPageNo = 1, document.write('<script src="' + home_page + "feeds/posts/summary/-/" + postLabel + '?alt=json-in-script&callback=totalcountdata&max-results=1" ><\/script>')));
-
-       if (urlactivepage == "https://workshop.wallpaperhdv.net/search?q=Anime+video"){
-       console.log('aa');
-       }
-
      }
 
      function redirectpage(e) {
